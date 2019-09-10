@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Greeting = ({ currentUser, logout }) => {
+const Header = ({ currentUser, logout }) => {
   const sessionLinks = () => (
     <div>
       <p>Logo Here</p>
@@ -14,19 +14,25 @@ const Greeting = ({ currentUser, logout }) => {
   );
 
   const loggedIn = () => (
-    <div>
+    <header>
+      <nav className="header-left">
+        <Link to="/explore" className="logo">Logo</Link>&nbsp;
+        <Link to="/explore">Home</Link>&nbsp;
+        <Link to="/stream">Stream</Link>&nbsp;
+        <Link to="/library">Library</Link>
+      </nav>
       <input type="search" placeholder="Search"></input>
-      <nav className="header-right">
+      <div className="header-right">
         <p>{currentUser.username}</p>&nbsp;
         <p>alerts</p>&nbsp;
         <p>messages</p>&nbsp;
         <button className="header-button" onClick={logout}>Log Out</button>
-      </nav>
-    </div>    
+      </div>
+    </header>    
   );
 
   return currentUser ? loggedIn() : sessionLinks();
 };
 
 
-export default Greeting;
+export default Header;

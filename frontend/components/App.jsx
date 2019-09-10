@@ -1,14 +1,12 @@
 import React from 'react';
 import { 
   Route,
-  Link,
-  BrowserRouter,
   Switch
 } from 'react-router-dom';
 
 import { AuthRoute } from '../util/route_util';
 
-import GreetingContainer from './greeting/greeting_container';
+import HeaderContainer from './header/header_container';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import PlayControls from './playcontrols/play_controls';
@@ -28,20 +26,11 @@ const Index= () => {
 
 const App = () => (
   <div className="wrapper">
-    <header className="banner">
-      <div className="inner-header">
-        <div className="header-left">
-          <Link to="/explore" className="logo">Logo</Link>&nbsp;
-          <Link to="/explore">Home</Link>&nbsp;
-          <Link to="/stream">Stream</Link>&nbsp;
-          <Link to="/library">Library</Link>
-        </div>
-        
-        <GreetingContainer />
-      </div>
-    </header>
-      <AuthRoute path="/login" component={LoginFormContainer} />
-      <AuthRoute path="/signup" component={SignupFormContainer} />
+    <HeaderContainer />
+
+    <AuthRoute path="/login" component={LoginFormContainer} />
+    <AuthRoute path="/signup" component={SignupFormContainer} />
+
     <div className="main">
       <Switch>
         <Route exact path="/" component={Index} />
@@ -51,7 +40,9 @@ const App = () => (
         <Route component={NoMatchPage} />
       </Switch>
     </div>
+
     <PlayControls />
+
   </div>
 );
 
