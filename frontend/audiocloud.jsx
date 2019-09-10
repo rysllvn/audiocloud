@@ -20,6 +20,4 @@ document.addEventListener("DOMContentLoaded", () => {
   
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={store} />, root);
-
-  window.store = store;//Remove in the furtire
 });
