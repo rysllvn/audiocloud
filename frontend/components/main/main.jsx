@@ -4,7 +4,8 @@ import {
     Switch
 } from 'react-router-dom';
 
-import LoginFormContainer from '../session/login_form_container';
+import LoginFormContainer from '../session/signin_form_container';
+import SignupFormContainer from '../session/create_account_form_container';
 import Explore from './explore';
 import NoMatch from './no_match';
 
@@ -13,10 +14,22 @@ class Main extends React.Component {
         super(props);
     }
 
+    modal() {
+        if (this.props.modal === 'signIn') {
+            return (
+                <LoginFormContainer />
+            )
+        } else {
+            return (
+                <SignupFormContainer />
+            )
+        }
+    }
+
     render() {
         return (
             <div className="main">
-                {this.props.modal && <LoginFormContainer />}
+                {this.props.modal && this.modal()}
                 <Switch>
                     <Route exact path="/" component={Explore} />
                     <Route exact path="/explore" component={Explore} />

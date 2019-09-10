@@ -4,9 +4,9 @@ const SplashHeader = ({ setModalStatus }) => (
     <header>
         <p>Logo Here</p>
         <nav className="header-right">
-            <button className="header-button" onClick={() => setModalStatus(true)}>Sign in</button>
-            &nbsp;or&nbsp;
-            <button className="header-button" onClick={() => setModalStatus(true)}>Create Account</button>
+            <button className="header-button" onClick={() => setModalStatus('signIn')}>Sign in</button>
+            &nbsp;
+            <button className="header-button" onClick={() => setModalStatus('createAccount')}>Create account</button>
         </nav>
     </header>
 );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { timingSafeEqual } from 'crypto';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -8,6 +9,10 @@ class SessionForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.formType = this.props.formType;
+    this.otherForm = this.props.otherForm;
+    this.otherFormNice = this.props.otherFormNice;
+    this.setModalStatus = this.props.setModalStatus;
   }
 
   update(field) {
@@ -42,10 +47,9 @@ class SessionForm extends React.Component {
     return (
       <div className="modal">
         <div className="modal-content">
+          <h3>{this.formType} or <button onClick={() => this.setModalStatus(this.otherForm)}>{this.otherFormNice}</button> instead</h3>
+          <button onClick={() => this.props.setModalStatus(false)}>[Close Button]</button>
           <form onSubmit={this.handleSubmit} className="login-form-box">
-            Audiocloud
-            <br/>
-            {this.props.formType} or {this.props.navLink}
             {this.renderErrors()}
             <div className="login-form">
               <br/>
@@ -68,7 +72,6 @@ class SessionForm extends React.Component {
               <input className="session-submit" type="submit" value={this.props.formType} />
             </div>
           </form>
-          <button onClick={() => this.props.setModalStatus(false)}>Close</button>
         </div>
       </div>
     );
