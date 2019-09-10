@@ -1,18 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SplashHeader from './splash_header';
 
 const Header = ({ currentUser, logout }) => {
-  const sessionLinks = () => (
-    <div>
-      <p>Logo Here</p>
-      <nav className="header-right">
-        <Link to="/login">Sign in</Link>
-        &nbsp;or&nbsp;
-        <Link to="/signup">Create account</Link>
-      </nav>
-    </div>    
-  );
-
   const loggedIn = () => (
     <header>
       <nav className="header-left">
@@ -31,7 +21,7 @@ const Header = ({ currentUser, logout }) => {
     </header>    
   );
 
-  return currentUser ? loggedIn() : sessionLinks();
+  return currentUser ? loggedIn() : <SplashHeader />;
 };
 
 
