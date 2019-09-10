@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 
 import { logout } from '../../actions/session_actions';
+import { setModalStatus } from '../../actions/ui_actions';
 import Header from './header';
 
 const mapStateToProps = ({ session, entities: { users } }) => {
@@ -10,7 +11,8 @@ const mapStateToProps = ({ session, entities: { users } }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout())
+  logout: () => dispatch(logout()),
+  setModalStatus: status => dispatch(setModalStatus(status))
 });
 
 export default connect(

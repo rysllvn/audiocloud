@@ -1,13 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const SplashHeader = () => (
+const SplashHeader = ({ setModalStatus }) => (
     <header>
         <p>Logo Here</p>
         <nav className="header-right">
-            <Link to="/login">Sign in</Link>
+            <button className="header-button" onClick={() => setModalStatus(true)}>Sign in</button>
             &nbsp;or&nbsp;
-            <Link to="/signup">Create account</Link>
+            <button className="header-button" onClick={() => setModalStatus(true)}>Create Account</button>
         </nav>
     </header>
 );

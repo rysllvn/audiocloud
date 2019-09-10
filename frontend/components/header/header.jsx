@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SplashHeader from './splash_header';
 
-const Header = ({ currentUser, logout }) => {
+const Header = ({ currentUser, logout, setModalStatus }) => {
   const loggedIn = () => (
     <header>
       <nav className="header-left">
@@ -21,7 +21,7 @@ const Header = ({ currentUser, logout }) => {
     </header>    
   );
 
-  return currentUser ? loggedIn() : <SplashHeader />;
+  return currentUser ? loggedIn() : <SplashHeader setModalStatus={setModalStatus} />;
 };
 
 
