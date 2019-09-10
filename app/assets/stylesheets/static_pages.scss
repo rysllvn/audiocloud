@@ -1,3 +1,56 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+    background-color: rgb(235, 232, 232);
+}
+
+.wrapper {
+    margin: auto;
+}
+
+.main {
+    background-color: white;
+    max-width: 1240px;
+    margin: auto;
+    height: 100%;
+}
+
+header {
+    width: 100%;
+    background-color: #333;
+}
+
+.playControls {
+    position: fixed;
+    bottom: 0;
+    background-color: lightgray;
+    height: 50px;
+    width: 100%;
+}
+
+.inner-header {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    max-width: 1240px;
+    margin: auto;
+}
+
+.header-left {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-right {
+    display: flex;
+}
+
+.logo {
+    background-color: darkorange;
+}
+
+a {
+    color: white;
+}
