@@ -23,14 +23,11 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
-
-    if (this.props.sessionId) {
-      this.props.setModalStatus(false);
-      this.props.history.push({
-        pathname: "/explore",
+    this.props.processForm(user)
+      .then(() => {
+        this.props.setModalStatus(false);
+        this.props.history.push({pathname: "/explore"});
       });
-    }
   }
 
   renderErrors() {

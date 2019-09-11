@@ -1,37 +1,31 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import SplashHeader from './splash_header';
+import Headernav from './nav';
+import SearchBar from './search';
+import LoggedInRight from './logged_in_right';
+import LoggedOutRight from './logged_out_right';
 
 const Header = ({ currentUser, logout, setModalStatus, history }) => {
+  let headerRight;
+  if (currentUser) {
+    headerRight = <LoggedInRight 
+                    history={history}
+                    logout={logout}
+                    username={currentUser.username}
+                  />;
+  } else {
+    headerRight = <LoggedOutRight setModalStatus={setModalStatus} />;
+  }
 
-  const handleLogout = () => {
-    history.push({
-      pathname: "/",
-    });
-    logout();
-  };
-
-  const loggedIn = () => (
+  return (
     <header className="header-container">
-      <div className="header-inner">
-        <nav className="header-left">
-          <img src="/assets/logo.png" className="logo-img"/>
-          <Link to="/explore">Home</Link>&nbsp;
-          <Link to="/stream">Stream</Link>&nbsp;
-          <Link to="/library">Library</Link>
-        </nav>
-        <input type="search" placeholder="Search"></input>
-        <div className="header-right">
-          <p>{currentUser.username}</p>&nbsp;
-          <p>alerts</p>&nbsp;
-          <p>messages</p>&nbsp;
-          <button className="header-button" onClick={handleLogout}>Log Out</button>
-        </div>
-      </div>
-    </header>    
-  );
-
-  return currentUser ? loggedIn() : <SplashHeader setModalStatus={setModalStatus} />;
+       <div className="header-inner">
+         <img src="/assets/logo.png" className="logo-img"/>
+         <Headernav />
+         <SearchBar />
+         {headerRight}
+       </div>
+     </header>    
+  )
 };
 
 

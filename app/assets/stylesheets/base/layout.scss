@@ -4,20 +4,11 @@ html {
     background-color: lightgray;
 }
 
-.main {
-	width: 80%;
-	margin: 0 auto;
-	font-family: $serif;
-    font-size: 12px;
-    background-color: white;
-}
-
 button {
 	background-color: $light-blue;
 	border-color: $dark-blue;
 	color: white;
 	font-weight: bold;
-	padding: 7px 9px;
 	border-radius: 3px;
 	transition: background-color 0.3s;
 	font-family: $sans-serif;
@@ -27,22 +18,6 @@ button {
 	
 }
 
-.clear-button {
-	background-color: rgba(0,0,0,0);
-	border-style: solid;
-	border-width: 1px;
-	border-color: white;
-}
-
-.orange-button {
-	background-color: $s-orange;
-}
-
-.upload-button {
-	color: white;
-	background-color: black;
-}
-
 button:hover {
     cursor: pointer;
 }
@@ -50,7 +25,7 @@ button:hover {
 input[type="submit"] {
     background-color: $s-orange;
 	border-color: $dark-blue;
-	color: white;
+	color: $s-grey;
 	font-weight: bold;
 	padding: 7px 9px;
 	border-radius: 3px;
@@ -66,13 +41,12 @@ input[type="text"] {
 	border-color: $dark-blue;
 	border-style: solid;
 	border-width: 1px;
-	color: white;
+	color: $s-grey;
 	font-weight: bold;
 	padding: 7px 9px;
 	border-radius: 3px;
 	transition: background-color 0.3s;
 	font-family: $sans-serif;
-	text-transform: uppercase;
 	font-size: 11px;
 	text-align: center;
 }
@@ -82,13 +56,17 @@ input[type="password"] {
 	border-color: $dark-blue;
 	border-style: solid;
 	border-width: 1px;
-	color: white;
-	font-weight: bold;
+	color: $s-grey;
 	padding: 7px 9px;
 	border-radius: 3px;
 	transition: background-color 0.3s;
-	font-family: $sans-serif;
-	text-transform: uppercase;
-	font-size: 11px;
 	text-align: center;
+}
+
+input[type="search"] {
+	color: #666;
+    outline: 0;
+    border: 0;
+    padding: 5px 7p;
+	background: #e5e5e5
 }
