@@ -7,7 +7,7 @@ class PlayControls extends React.Component {
 
     render () {
         return (
-            <section className="playControls">
+            <section className="play-controls">
                 <h4>Audio Controls Here</h4>
             </section>
         )

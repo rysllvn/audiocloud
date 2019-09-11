@@ -43,11 +43,18 @@ class SessionForm extends React.Component {
     );
   }
 
+  //From stack overflow https://stackoverflow.com/questions/34349136/react-how-to-capture-only-parents-onclick-event-and-not-children
+  onModalContentClick(event) {
+    if (event.target === event.currentTarget) this.setModalStatus(false);
+  }
+
   render() {
     return (
-      <div className="modal">
+      <div className="modal" onClick={this.onModalContentClick.bind(this)}>
         <div className="modal-content">
-          <h3>{this.formType} or <button onClick={() => this.setModalStatus(this.otherForm)}>{this.otherFormNice}</button> instead</h3>
+          <h3>{this.formType} or <button 
+                                    onClick={() => this.setModalStatus(this.otherForm)}
+                                  >{this.otherFormNice}</button> instead</h3>
           <button onClick={() => this.props.setModalStatus(false)}>[Close Button]</button>
           <form onSubmit={this.handleSubmit} className="login-form-box">
             {this.renderErrors()}
