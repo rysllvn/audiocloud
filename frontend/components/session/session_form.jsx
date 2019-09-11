@@ -55,7 +55,7 @@ class SessionForm extends React.Component {
           <h3>{this.formType} or <button 
                                     onClick={() => this.setModalStatus(this.otherForm)}
                                   >{this.otherFormNice}</button> instead</h3>
-          <button onClick={() => this.props.setModalStatus(false)}>[Close Button]</button>
+          <button onClick={() => this.props.setModalStatus(false)}>Close</button>
           <form onSubmit={this.handleSubmit} className="login-form-box">
             {this.renderErrors()}
             <div className="login-form">

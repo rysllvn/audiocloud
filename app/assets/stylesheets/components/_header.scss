@@ -1,0 +1,40 @@
+.logo-img {
+    height: 23px;
+    width: 48px;
+}
+
+.header-container {
+    background-color: darkgrey;
+    position: fixed;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    width: 960px;
+    margin: auto;
+}
+
+.header-left {
+    display: flex;
+}
+
+.header-right {
+    display: flex;
+}
+
+.main {
+    width: 960px;
+    margin: auto;
+    height: 100vh;
+}
+
+.play-controls {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+}
