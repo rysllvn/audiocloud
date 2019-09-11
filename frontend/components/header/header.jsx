@@ -19,7 +19,6 @@ const Header = ({ currentUser, logout, setModalStatus, history }) => {
   return (
     <header className="header-container">
        <div className="header-inner">
-         <img src="/assets/logo.png" className="logo-img"/>
          <Headernav />
          <SearchBar />
          {headerRight}

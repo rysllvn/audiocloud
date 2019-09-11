@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -55,14 +56,18 @@ class SessionForm extends React.Component {
     return (
       <div className="modal" onClick={this.onModalContentClick.bind(this)}>
         <div className="modal-content">
-          <h3>{this.formType} or <button 
-                                    onClick={() => this.setModalStatus(this.otherForm)}
-                                  >{this.otherFormNice}</button> instead</h3>
+          <h3 className="session-title">{this.formType}<br/>or<br/></h3>          
+          <button 
+            className="button-switch-form"
+            onClick={() => this.setModalStatus(this.otherForm)}
+          >{this.otherFormNice} instead</button>
+
           <form onSubmit={this.handleSubmit} className="login-form-box">
             {this.renderErrors()}
             <div className="login-form">
               <br/>
-              <label>Username:
+              <label>Username
+                <br/>
                 <input type="text"
                   value={this.state.username}
                   onChange={this.update('username')}
@@ -70,7 +75,8 @@ class SessionForm extends React.Component {
                 />
               </label>
               <br/>
-              <label>Password:
+              <label>Password
+                <br/>
                 <input type="password"
                   value={this.state.password}
                   onChange={this.update('password')}
@@ -78,9 +84,15 @@ class SessionForm extends React.Component {
                 />
               </label>
               <br/>
-              <input className="orange-button" type="submit" value={this.props.formType} />
+              <input className="session-submit" type="submit" value={this.props.formType} />
             </div>
           </form>
+          <Link className="link-need-help" to="/help">Need help?</Link>
+          <p className="disclaimer">
+            We may use your email and devices for updates and tips on SoundCloud's products and services,
+            and for activities notifications. You can unsubscribe for free at any time in your notification settings.
+            We may use information you provide us in
+          </p>
         </div>
       </div>
     );
