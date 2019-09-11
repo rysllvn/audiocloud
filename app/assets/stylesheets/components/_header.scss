@@ -4,8 +4,9 @@
 }
 
 .header-container {
-    background-color: darkgrey;
+    background-color: $s-grey;
     position: fixed;
+    width: 100%;
 }
 
 .header-inner {

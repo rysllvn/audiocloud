@@ -4,7 +4,7 @@ html {
     background-color: lightgray;
 }
 
-body {
+.main {
 	width: 80%;
 	margin: 0 auto;
 	font-family: $serif;
@@ -24,6 +24,23 @@ button {
 	text-transform: uppercase;
 	font-size: 11px;
 	text-align: center;
+	
+}
+
+.clear-button {
+	background-color: rgba(0,0,0,0);
+	border-style: solid;
+	border-width: 1px;
+	border-color: white;
+}
+
+.orange-button {
+	background-color: $s-orange;
+}
+
+.upload-button {
+	color: white;
+	background-color: black;
 }
 
 button:hover {
@@ -31,8 +48,40 @@ button:hover {
 }
 
 input[type="submit"] {
-    background-color: $light-blue;
+    background-color: $s-orange;
 	border-color: $dark-blue;
+	color: white;
+	font-weight: bold;
+	padding: 7px 9px;
+	border-radius: 3px;
+	transition: background-color 0.3s;
+	font-family: $sans-serif;
+	text-transform: uppercase;
+	font-size: 11px;
+	text-align: center;
+}
+
+input[type="text"] {
+    background-color: white;
+	border-color: $dark-blue;
+	border-style: solid;
+	border-width: 1px;
+	color: white;
+	font-weight: bold;
+	padding: 7px 9px;
+	border-radius: 3px;
+	transition: background-color 0.3s;
+	font-family: $sans-serif;
+	text-transform: uppercase;
+	font-size: 11px;
+	text-align: center;
+}
+
+input[type="password"] {
+    background-color: white;
+	border-color: $dark-blue;
+	border-style: solid;
+	border-width: 1px;
 	color: white;
 	font-weight: bold;
 	padding: 7px 9px;
