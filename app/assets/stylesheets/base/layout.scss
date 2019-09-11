@@ -32,7 +32,7 @@ input[type="text"] {
 	border-radius: 3px;
 	transition: background-color 0.3s;
 	font-family: $sans-serif;
-	font-size: 11px;
+	font-size: 18px;
 	text-align: left;
 	height: 38px;
 	width: 398px;
@@ -46,10 +46,10 @@ input[type="password"] {
 	color: $s-grey;
 	padding: 7px 9px;
 	border-radius: 3px;
-	transition: background-color 0.3s;
-	text-align: center;
+	text-align: left;
 	height: 38px;
 	width: 398px;
+	font-size: 18px;
 }
 
 input[type="search"] {

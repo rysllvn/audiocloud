@@ -1,39 +1,63 @@
-/* The Modal (background) */
 .modal {
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 99;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(242,242,242,0.9); /* Black w/ opacity */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(242,242,242,0.9);
   }
 
-  @keyframes example {
-    from {
-      margin-top:-620px;
-    }
-    to {
-      margin-top: 72px;
-    }
+@keyframes fly-in {
+  from {
+    margin-top:-620px;
   }
-  
-  /* Modal Content/Box */
-  .modal-content {
-    box-sizing: border-box;
-    height: 620px;
-    width: 450px; /* Could be more or less, depending on screen size */
-    margin: auto; /* 15% from the top and centered */
-    padding: 20px;
-
-    background-color: #fefefe;
-
-    margin-top: 72px;    
-    animation-name: example;
-    animation-duration: 0.4s;
+  to {
+    margin-top: 72px;
   }
+}
+
+.modal-content {
+  position: relative;
+  z-index: 100;
+  box-sizing: border-box;
+  height: 620px;
+  width: 450px;
+  margin: auto;
+  padding: 20px;
+
+  background-color: #fefefe;
+
+  margin-top: 72px;    
+  animation-name: fly-in;
+  animation-duration: 1s;
+}
+
+@keyframes fly-out {
+  from {
+    margin-top: 72px;
+  }
+  to {
+    margin-top: -620px;
+  }
+}
+
+.modal-content-out {
+  position: relative;
+  z-index: 100;
+  box-sizing: border-box;
+  height: 620px;
+  width: 450px;
+  margin: auto;
+  padding: 20px;
+
+  background-color: #fefefe;
+
+  margin-top: -620px;    
+  animation-name: fly-out;
+  animation-duration: 1s;
+}
 
 .session-submit {
   height: 40px;
@@ -59,16 +83,22 @@
   width: 400px;
 }
 
-.link-need-help {
+.link-session-form {
 	color:#38d;
 	text-align: right;
 }
 
 .disclaimer {
 	margin-top: 42px;
-	color: #999;
+  color: #999;
+  font: 12px/1.4 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Garuda, Verdana, Tahoma, sans-serif;
 }
 
 .session-title {
   font-size: 30px;
+}
+
+.auth-errors {
+  color: #cf0000;
+  font: 12px;
 }

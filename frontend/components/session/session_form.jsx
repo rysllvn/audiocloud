@@ -6,8 +6,10 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      modalClass: 'modal-content',
     };
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.formType = this.props.formType;
     this.otherForm = this.props.otherForm;
@@ -45,7 +47,12 @@ class SessionForm extends React.Component {
 
   //From stack overflow https://stackoverflow.com/questions/34349136/react-how-to-capture-only-parents-onclick-event-and-not-children
   onModalContentClick(event) {
-    if (event.target === event.currentTarget) this.setModalStatus(false);
+    if (event.target === event.currentTarget) {
+      this.setState({
+        modalClass: 'modal-content-out'
+      })
+      setTimeout(() => this.setModalStatus(false), 1000);
+    }
   }
 
   componentWillUnmount() {
@@ -55,7 +62,7 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className="modal" onClick={this.onModalContentClick.bind(this)}>
-        <div className="modal-content">
+        <div className={this.state.modalClass}>
           <h3 className="session-title">{this.formType}<br/>or<br/></h3>          
           <button 
             className="button-switch-form"
@@ -63,7 +70,7 @@ class SessionForm extends React.Component {
           >{this.otherFormNice} instead</button>
 
           <form onSubmit={this.handleSubmit} className="login-form-box">
-            {this.renderErrors()}
+            <div className="auth-errors">{this.renderErrors()}</div>
             <div className="login-form">
               <br/>
               <label>Username
@@ -87,11 +94,11 @@ class SessionForm extends React.Component {
               <input className="session-submit" type="submit" value={this.props.formType} />
             </div>
           </form>
-          <Link className="link-need-help" to="/help">Need help?</Link>
+          <Link className="link-session-form" to="/help">Need help?</Link>
           <p className="disclaimer">
             We may use your email and devices for updates and tips on SoundCloud's products and services,
             and for activities notifications. You can unsubscribe for free at any time in your notification settings.
-            We may use information you provide us in
+            We may use information you provide us in our <Link className="link-session-form" to="/privacy">Privacy Policy.</Link>
           </p>
         </div>
       </div>
