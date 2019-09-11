@@ -1,5 +1,4 @@
 import React from 'react';
-import { timingSafeEqual } from 'crypto';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -24,11 +23,14 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.setModalStatus(false);
     this.props.processForm(user);
-    this.props.history.push({
-      pathname: "/explore",
-    });
+
+    if (this.props.sessionId) {
+      this.props.setModalStatus(false);
+      this.props.history.push({
+        pathname: "/explore",
+      });
+    }
   }
 
   renderErrors() {
@@ -48,6 +50,10 @@ class SessionForm extends React.Component {
     if (event.target === event.currentTarget) this.setModalStatus(false);
   }
 
+  componentWillUnmount() {
+    this.props.receiveErrors([]);
+  }
+
   render() {
     return (
       <div className="modal" onClick={this.onModalContentClick.bind(this)}>
@@ -55,7 +61,6 @@ class SessionForm extends React.Component {
           <h3>{this.formType} or <button 
                                     onClick={() => this.setModalStatus(this.otherForm)}
                                   >{this.otherFormNice}</button> instead</h3>
-          <button onClick={() => this.props.setModalStatus(false)}>Close</button>
           <form onSubmit={this.handleSubmit} className="login-form-box">
             {this.renderErrors()}
             <div className="login-form">
