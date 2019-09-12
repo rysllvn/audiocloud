@@ -7,7 +7,7 @@ const LoggedOutRight = ({setModalStatus}) => (
         &nbsp;
         <button className="orange-button" onClick={() => setModalStatus('createAccount')}>Create account</button>
         <Link className="upload-button" to="/upload">Upload</Link>
-        <ul className="nav-dropdown">...</ul>
+        <a className="nav-dropdown"><i className="fas fa-ellipsis-h"></i></a>
     </nav>
 );
 

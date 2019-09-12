@@ -23,7 +23,7 @@
 .header-inner {
     display: flex;
     justify-content: space-between;
-    width: 1079px;
+    width: 1240px;
     margin: auto;
     align-items: center;
 }
@@ -33,16 +33,22 @@
     justify-content: space-around;
 }
 
+.search {
+    width: 100%;
+    margin-right: 20px;
+}
+
 .search-input {
     width: 100%;
     display: block;
     font-size: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .header-right {
     display: flex;
     align-items: center;
-
     font-style: normal;
     font-variant-ligatures: normal;
     font-variant-caps: normal;
@@ -54,6 +60,7 @@
     line-height: 1.5;
     font-family: Interstate, "Lucida Grande", Arial, sans-serif;
     color: $text-nav;
+    margin-left: 10px;
 }
 
 .header-nav {
@@ -78,18 +85,27 @@
     font-family: Interstate, "Lucida Grande", Arial, sans-serif;
 }
 
+.header-nav:hover {
+    color: white; 
+}
+
 .clear-button {
+    box-sizing: border-box;
 	background-color: $background-clear;
-    height: 24px;
+    height: 26px;
     width: 64px;
-    border: 1px solid $border-color-button-secondary;
-    margin-right: 9px;
+    border: 1px solid #666;
+    font-weight: 100;
+}
+
+.clear-button:hover {
+    border-color: white;
 }
 
 .orange-button {
     height: 26px;
     width: 118px;
-    margin-left: 9px;
+    margin-left: 18px;
     margin-right: 9px;
 }
 
@@ -103,4 +119,40 @@
 
 .nav-dropdown {
     width: 25px;
+}
+
+.nav-upload {
+    width: 64px;
+}
+
+.nav-upload:hover {
+    color: white;
+}
+
+.nav-username {
+    display:flex;
+    max-width: 149px;
+    
+    flex-direction: row;
+}
+
+.nav-alerts {
+    box-sizing: border-box;
+    width: 46px;
+    text-align: center; 
+    font-size: 18px;
+}
+
+.nav-messages {
+    box-sizing: border-box;
+    width: 46px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.nav-dropdown {    
+    box-sizing: border-box;
+    width: 46px;
+    text-align: center;
+    font-size: 20px;
 }

@@ -4,6 +4,10 @@ html {
     background-color: $background-grey;
 }
 
+h1 {
+	font-size: 50px;
+}
+
 button {
 	background-color: $background-button-main;
 	border-color: $background-button-main;
@@ -17,6 +21,11 @@ button {
 
 button:hover {
     cursor: pointer;
+}
+
+a:hover {
+	cursor: pointer;
+	color: white;
 }
 
 input[type="text"] {
