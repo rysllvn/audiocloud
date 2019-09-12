@@ -91,43 +91,36 @@
 .session-submit {
   height: 40px;
   width: 400px;
-  color: #fff;
-  border-color: #f50;
   margin-top: 10px;
-  background-color: $s-orange;
 	border-radius: 3px;
 	transition: background-color 0.3s;
-	font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
   font-size: 16px;
   font-weight: 100;
 	text-align: center;
-    
-  }
+}
 
 .button-switch-form {
   margin-top: 100px;
-  background-color: #4285f4;
+  background-color: $background-modal-button;
   height: 40px;
   width: 400px;
   text-transform: none;
   font-size: 16px;
   font-weight: 100;
-  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
 }
 
 .button-demo-login {
   margin-top: 10px;
-  background-color: #4285f4;
+  background-color: $background-modal-button;
   height: 40px;
   width: 400px;
   text-transform: none;
   font-size: 16px;
   font-weight: 100;
-  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
 }
 
 .link-session-form {
-	color:#38d;
+	color:$text-small-link;
   text-align: right;
   float: right;
   margin-right: 15px;
@@ -139,18 +132,10 @@
 
 .disclaimer {
 	margin-top: 42px;
-  color: #999;
-  font: 12px/1.4 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Garuda, Verdana, Tahoma, sans-serif;
+  color: $text-fine-print;
 }
 
 .session-title {
   font-size: 30px;
-  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
   text-align: center;
-}
-
-.auth-errors {
-  color: #cf0000;
-  font-size: 14px;
-  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
 }

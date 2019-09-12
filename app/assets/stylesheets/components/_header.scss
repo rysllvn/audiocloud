@@ -1,18 +1,28 @@
+.header-container {
+    overflow: hidden;
+    background-color: $background-nav;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.logo {
+    background: url(cloud.png) no-repeat 12px 11px $background-button-main;
+    background-size: 48px 22px;
+    height: 46px;
+    width: 69px;
+    box-sizing: border-box;
+    outline: 0;
+}
+
 .logo-img {
     height: 23px;
     width: 48px;
 }
 
-.header-container {
-    background-color: $s-grey;
-    position: fixed;
-    width: 100%;
-    height: 46px;
-}
-
 .header-inner {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 1079px;
     margin: auto;
     align-items: center;
@@ -23,9 +33,27 @@
     justify-content: space-around;
 }
 
+.search-input {
+    width: 100%;
+    display: block;
+    font-size: 14px;
+}
+
 .header-right {
     display: flex;
     align-items: center;
+
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: 100;
+    font-stretch: normal;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: Interstate, "Lucida Grande", Arial, sans-serif;
+    color: $text-nav;
 }
 
 .header-nav {
@@ -36,29 +64,43 @@
     border-right: 1px solid #111;
     box-sizing: border-box;
     text-align: center;
-    color: #ccc;
-    font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+    color: $text-nav;
+
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: 100;
+    font-stretch: normal;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: Interstate, "Lucida Grande", Arial, sans-serif;
 }
 
 .clear-button {
-	background-color: rgba(0,0,0,0);
+	background-color: $background-clear;
     height: 24px;
     width: 64px;
-    border: 1px solid #e5e5e5;
-    font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+    border: 1px solid $border-color-button-secondary;
+    margin-right: 9px;
 }
 
 .orange-button {
-	background-color: $s-orange;
     height: 26px;
     width: 118px;
-}
-
-.upload-button {
-	color: white;
-	background-color: black;
+    margin-left: 9px;
+    margin-right: 9px;
 }
 
 .logo-notin {
     background-image: url(logo.png);
+}
+
+.upload-button {
+    padding: 12px 10px 12px;
+}
+
+.nav-dropdown {
+    width: 25px;
 }

@@ -10,13 +10,14 @@ const handleLogout = (history, logout) => {
 
 const LoggedInRight = ({history, logout, username}) => (
     <div className="header-right">
-        <p>{username}</p>&nbsp;
-        <p>alerts</p>&nbsp;
-        <p>messages</p>&nbsp;
+        <span>{username}</span>&nbsp;
+        <span>alerts</span>&nbsp;
+        <span>messages</span>&nbsp;
         <button 
             className="header-button"
             onClick={() => handleLogout(history, logout)}
         >Log Out</button>
+        <ul className="nav-dropdown">...</ul>
     </div>
 );
 
