@@ -8,10 +8,10 @@ const handleLogout = (history, logout) => {
     logout();
 };
 
-const LoggedInRight = ({history, logout, username}) => (
+const LoggedInRight = ({history, logout, currentUser}) => (
     <div className="header-right">
         <Link to="/upload" className="nav-upload">Upload</Link>
-        <a className="nav-username"><div>{username}</div></a>
+        <Link to={`/users/${currentUser.id}`}className="nav-username"><div>{currentUser.username}</div></Link>
         <a className="nav-alerts"><i className="fas fa-bell"></i></a>
         <a className="nav-messages"><i className="fas fa-envelope"></i></a>
         <a 

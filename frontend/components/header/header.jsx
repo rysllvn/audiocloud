@@ -10,7 +10,7 @@ const Header = ({ currentUser, logout, setModalStatus, history }) => {
     headerRight = <LoggedInRight 
                     history={history}
                     logout={logout}
-                    username={currentUser.username}
+                    currentUser={currentUser}
                   />;
   } else {
     headerRight = <LoggedOutRight setModalStatus={setModalStatus} />;
