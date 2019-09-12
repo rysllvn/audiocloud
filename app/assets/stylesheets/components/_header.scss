@@ -7,17 +7,12 @@
 }
 
 .logo {
-    background: url(cloud.png) no-repeat 12px 11px $background-button-main;
+    background: image-url('cloud.png') no-repeat 12px 11px $background-button-main;
     background-size: 48px 22px;
     height: 46px;
     width: 69px;
     box-sizing: border-box;
     outline: 0;
-}
-
-.logo-img {
-    height: 23px;
-    width: 48px;
 }
 
 .header-inner {
