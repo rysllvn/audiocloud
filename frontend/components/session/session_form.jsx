@@ -8,6 +8,7 @@ class SessionForm extends React.Component {
       username: '',
       password: '',
       modalClass: 'modal-content',
+      modalContainerClass: 'modal'
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -49,9 +50,10 @@ class SessionForm extends React.Component {
   onModalContentClick(event) {
     if (event.target === event.currentTarget) {
       this.setState({
-        modalClass: 'modal-content-out'
+        modalClass: 'modal-content-out',
+        modalContainerClass: 'modal-out'
       })
-      setTimeout(() => this.setModalStatus(false), 1000);
+      setTimeout(() => this.setModalStatus(false), 400);
     }
   }
 
@@ -59,15 +61,27 @@ class SessionForm extends React.Component {
     this.props.receiveErrors([]);
   }
 
+  demoLogin() {
+    // document.getElementById("username").value = 'ryan';
+    // document.getElementById("password").value = '123456';
+    document.getElementById("submit").click();
+  }
+
   render() {
     return (
-      <div className="modal" onClick={this.onModalContentClick.bind(this)}>
+      <div className={this.state.modalContainerClass} onClick={this.onModalContentClick.bind(this)}>
         <div className={this.state.modalClass}>
           <h3 className="session-title">{this.formType}<br/>or<br/></h3>          
           <button 
             className="button-switch-form"
             onClick={() => this.setModalStatus(this.otherForm)}
-          >{this.otherFormNice} instead</button>
+          >{this.otherFormNice}</button>
+
+          <button 
+            className="button-demo-login"
+            onClick={this.demoLogin}
+          >DEMO USER LOGIN</button>
+
 
           <form onSubmit={this.handleSubmit} className="login-form-box">
             <div className="auth-errors">{this.renderErrors()}</div>
@@ -75,7 +89,9 @@ class SessionForm extends React.Component {
               <br/>
               <label>Username
                 <br/>
-                <input type="text"
+                <input 
+                  id="username"
+                  type="text"
                   value={this.state.username}
                   onChange={this.update('username')}
                   className="login-input"
@@ -84,14 +100,16 @@ class SessionForm extends React.Component {
               <br/>
               <label>Password
                 <br/>
-                <input type="password"
+                <input 
+                  id="password"
+                  type="password"
                   value={this.state.password}
                   onChange={this.update('password')}
                   className="login-input"
                 />
               </label>
               <br/>
-              <input className="session-submit" type="submit" value={this.props.formType} />
+              <input id="submit" className="session-submit" type="submit" value={this.props.formType} />
             </div>
           </form>
           <Link className="link-session-form" to="/help">Need help?</Link>
