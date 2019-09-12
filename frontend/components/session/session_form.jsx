@@ -77,23 +77,16 @@ class SessionForm extends React.Component {
     return (
       <div className={this.state.modalContainerClass} onClick={this.onModalContentClick.bind(this)}>
         <div className={this.state.modalClass}>
-          <h3 className="session-title">{this.formType}<br/>or<br/></h3>          
-          <button 
-            className="button-switch-form"
-            onClick={() => this.setModalStatus(this.otherForm)}
-          >{this.otherFormNice}</button>
-
           <button 
             className="button-demo-login"
             onClick={this.demoLogin}
-          >DEMO USER LOGIN</button>
-
+          >Login with demo user credentials</button>        
 
           <form onSubmit={this.handleSubmit} className="login-form-box">
             <div className="auth-errors">{this.renderErrors()}</div>
             <div className="login-form">
               <br/>
-              <label>Username
+              <label>
                 <br/>
                 <input 
                   id="username"
@@ -101,10 +94,11 @@ class SessionForm extends React.Component {
                   value={this.state.username}
                   onChange={this.update('username')}
                   className="login-input"
+                  placeholder="username"
                 />
               </label>
               <br/>
-              <label>Password
+              <label>
                 <br/>
                 <input 
                   id="password"
@@ -112,6 +106,7 @@ class SessionForm extends React.Component {
                   value={this.state.password}
                   onChange={this.update('password')}
                   className="login-input"
+                  placeholder="password"
                 />
               </label>
               <br/>
@@ -119,11 +114,14 @@ class SessionForm extends React.Component {
             </div>
           </form>
           <Link className="link-session-form" to="/help">Need help?</Link>
+          <button 
+            className="button-switch-form"
+            onClick={() => this.setModalStatus(this.otherForm)}
+          >{this.otherFormNice}</button> 
           <p className="disclaimer">
             We may use your email and devices for updates and tips on SoundCloud's products and services,
             and for activities notifications. You can unsubscribe for free at any time in your notification settings.
-            We may use information you provide us in our <Link className="link-session-form" to="/privacy">Privacy Policy.</Link>
-          </p>
+            We may use information you provide us in our <Link className="link-privacy" to="/privacy">Privacy Policy.</Link></p>
         </div>
       </div>
     );

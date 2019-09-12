@@ -105,9 +105,14 @@
   }
 
 .button-switch-form {
+  margin-top: 100px;
   background-color: #4285f4;
   height: 40px;
   width: 400px;
+  text-transform: none;
+  font-size: 16px;
+  font-weight: 100;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
 }
 
 .button-demo-login {
@@ -115,11 +120,21 @@
   background-color: #4285f4;
   height: 40px;
   width: 400px;
+  text-transform: none;
+  font-size: 16px;
+  font-weight: 100;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
 }
 
 .link-session-form {
 	color:#38d;
-	text-align: right;
+  text-align: right;
+  float: right;
+  margin-right: 15px;
+}
+
+.link-privacy {
+	color:#38d;
 }
 
 .disclaimer {
@@ -136,5 +151,6 @@
 
 .auth-errors {
   color: #cf0000;
-  font: 12px;
+  font-size: 14px;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
 }

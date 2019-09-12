@@ -11,7 +11,7 @@ const mapStateToProps = ({ errors, session }) => {
         sessionId: session.id,
         formType: 'Create account',
         otherForm: 'signIn',
-        otherFormNice: 'Sign in'
+        otherFormNice: 'Just need to sign in?'
     };
 };
 
