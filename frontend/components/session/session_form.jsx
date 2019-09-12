@@ -16,6 +16,14 @@ class SessionForm extends React.Component {
     this.otherForm = this.props.otherForm;
     this.otherFormNice = this.props.otherFormNice;
     this.setModalStatus = this.props.setModalStatus;
+    this.demoLogin = this.demoLogin.bind(this);
+  }
+
+  demoLogin() {
+    this.setState({
+      username: 'ryan',
+      password: '123456'
+    }, () => document.getElementById("submit").click());
   }
 
   update(field) {
@@ -29,7 +37,11 @@ class SessionForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
       .then(() => {
-        this.props.setModalStatus(false);
+        this.setState({
+          modalClass: 'modal-content-out',
+          modalContainerClass: 'modal-out'
+        })
+        setTimeout(() => this.setModalStatus(false), 400);
         this.props.history.push({pathname: "/explore"});
       });
   }
@@ -59,12 +71,6 @@ class SessionForm extends React.Component {
 
   componentWillUnmount() {
     this.props.receiveErrors([]);
-  }
-
-  demoLogin() {
-    // document.getElementById("username").value = 'ryan';
-    // document.getElementById("password").value = '123456';
-    document.getElementById("submit").click();
   }
 
   render() {
