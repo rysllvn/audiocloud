@@ -8,11 +8,14 @@ import { AuthRoute, ProtectedRoute } from '../../util/route_util';
 
 import LoginFormContainer from '../session/signin_form_container';
 import SignupFormContainer from '../session/create_account_form_container';
-import Explore from './explore';
-import Library from './library';
+import Explore from './explore/explore';
+import Library from './library/library';
+import ProfileContainer from './profile/profile_container';
+import UploadContainer from './upload/upload_container';
 import Stream from './stream';
 import NoMatch from './no_match';
 import RedirectLoginContainer from '../session/redirect_login_container';
+import Profile from './profile/profile';
 
 class Main extends React.Component {
     constructor(props) {
@@ -38,8 +41,10 @@ class Main extends React.Component {
                 <Switch>
                     <Route exact path="/" component={Explore} />
                     <Route exact path="/explore" component={Explore} />
-                    <ProtectedRoute exact path="/stream" component={Stream} />
                     <ProtectedRoute exact path="/library" component={Library} />
+                    <Route path ="/users/:userId" component={ProfileContainer} />
+                    <ProtectedRoute exact path="/upload" component={UploadContainer} />
+                    <ProtectedRoute exact path="/stream" component={Stream} />
                     <AuthRoute exact path="/login" component={RedirectLoginContainer} />
                     <Route component={NoMatch} />
                 </Switch>
