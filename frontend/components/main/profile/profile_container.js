@@ -9,7 +9,6 @@ const mapStateToProps = (state, ownProps) => ({
   
 const mapDispatchToProps = dispatch => ({
     getUser: userId => dispatch(getUser(userId)),
-    getUserTracks: userId => dispatch(getUserTracks(userId))
 });
   
 export default connect(
