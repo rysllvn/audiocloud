@@ -21,8 +21,8 @@ class SessionForm extends React.Component {
 
   demoLogin() {
     this.setState({
-      username: 'ryan',
-      password: '123456'
+      username: 'demo_user',
+      password: 'goodpass'
     }, () => document.getElementById("submit").click());
   }
 
