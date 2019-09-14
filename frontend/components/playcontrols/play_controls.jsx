@@ -4,15 +4,13 @@ class PlayControls extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            currentTrackId: 0
-        }
+        this.state = { }
     }
 
     render () {
         return (
             <section className="play-controls">
-                <audio controls />
+                <audio controls/>
             </section>
         )
     }

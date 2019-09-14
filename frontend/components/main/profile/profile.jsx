@@ -19,7 +19,7 @@ class Profile extends React.Component {
                     })
                 }, 
             ).fail(() => {
-                this.setState({username: 'add redirect to user not found or something here'})
+                this.setState({username: 'USER NOT FOUND'})
             });
     }
 
@@ -36,7 +36,7 @@ class Profile extends React.Component {
     render() {
         return (
             <div>
-                <h1>{this.state.username}'s profile page</h1>
+                <h1>{this.state.username}</h1>
                 <ul>
                     { <TrackIndexContainer userId={this.props.userId} /> }
                 </ul>
