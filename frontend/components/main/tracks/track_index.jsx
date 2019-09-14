@@ -1,5 +1,6 @@
 import React from 'react';
 import Track from './track';
+import { setCurrentTrack } from '../../../actions/ui_actions';
 
 class TrackIndex extends React.Component {
     constructor(props) {
@@ -32,10 +33,13 @@ class TrackIndex extends React.Component {
     }
 
     render () {
-        debugger
         return (
             <ul>
-                {this.state.tracks.map(track => <Track track={track} />)}
+                {this.state.tracks.map(track => <Track
+                                                    key={track.id}
+                                                    track={track}
+                                                    setCurrentTrack={this.props.setCurrentTrack}
+                                                />)}
             </ul>
         )
     }

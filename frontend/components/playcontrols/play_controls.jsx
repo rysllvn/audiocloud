@@ -2,7 +2,11 @@ import React from 'react';
 
 class PlayControls extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
+
+        this.state = {
+            currentTrackId: 0
+        }
     }
 
     render () {
