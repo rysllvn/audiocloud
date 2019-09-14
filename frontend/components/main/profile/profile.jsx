@@ -1,13 +1,12 @@
 import React from 'react';
-import TrackIndex from '../tracks/tracks_index';
+import TrackIndexContainer from '../tracks/track_index_container';
 
 class Profile extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            username: '',
-            tracks: []
+            username: ''
         };
     }
 
@@ -16,8 +15,7 @@ class Profile extends React.Component {
             .then(
                 result => {
                     this.setState({
-                        username: result.user.username,
-                        tracks: Object.values(result.user.tracks)
+                        username: result.user.username
                     })
                 }, 
             ).fail(() => {
@@ -40,7 +38,7 @@ class Profile extends React.Component {
             <div>
                 <h1>{this.state.username}'s profile page</h1>
                 <ul>
-                    { <TrackIndex tracks={this.state.tracks} /> }
+                    { <TrackIndexContainer userId={this.props.userId} /> }
                 </ul>
             </div>
             

@@ -94,7 +94,7 @@ class SessionForm extends React.Component {
                   value={this.state.username}
                   onChange={this.update('username')}
                   className="login-input"
-                  placeholder="username"
+                  placeholder="Username"
                 />
               </label>
               <br/>
@@ -106,7 +106,7 @@ class SessionForm extends React.Component {
                   value={this.state.password}
                   onChange={this.update('password')}
                   className="login-input"
-                  placeholder="password"
+                  placeholder="Password"
                 />
               </label>
               <br/>
@@ -119,9 +119,7 @@ class SessionForm extends React.Component {
             onClick={() => this.setModalStatus(this.otherForm)}
           >{this.otherFormNice}</button> 
           <p className="disclaimer">
-            We may use your email and devices for updates and tips on SoundCloud's products and services,
-            and for activities notifications. You can unsubscribe for free at any time in your notification settings.
-            We may use information you provide us in our <Link className="link-privacy" to="/privacy">Privacy Policy.</Link></p>
+            Thank you for taking the time to visit my project. You can find more projects I have done here <Link className="link-privacy" to="/otherprojects">Projects and information.</Link></p>
         </div>
       </div>
     );
