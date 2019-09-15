@@ -22,7 +22,7 @@ class SessionForm extends React.Component {
 
   demoLogin() {
     this.setState({
-      username: 'ryan',
+      username: 'bobert',
       password: 'goodpass'
     }, () => document.getElementById("submit").click());
   }
@@ -42,7 +42,7 @@ class SessionForm extends React.Component {
           modalClass: 'modal-content-out',
           modalContainerClass: 'modal-out'
         })
-        setTimeout(() => this.setModalStatus(false), 400);
+        setTimeout(() => this.setModalStatus(false), 300);
         this.props.history.push({pathname: "/explore"});
       });
   }
@@ -90,6 +90,7 @@ class SessionForm extends React.Component {
                 <input 
                   id="username"
                   type="text"
+                  value={this.state.username}
                   onChange={this.update('username')}
                   className="login-input"
                   placeholder="Username"
@@ -102,6 +103,7 @@ class SessionForm extends React.Component {
                 <input 
                   id="password"
                   type="password"
+                  value={this.state.password}
                   onChange={this.update('password')}
                   className="login-input"
                   placeholder="Password"

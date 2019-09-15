@@ -1,6 +1,6 @@
 import React from 'react';
-import TrackList from '../tracks/track_list';
 import { Redirect } from 'react-router-dom';
+import TrackIndex from '../tracks/track_index';
 
 class Profile extends React.Component {
     constructor(props) {
@@ -56,7 +56,7 @@ class Profile extends React.Component {
     render() {
         let trackList;
         if (this.state.tracks.length !== 0) {
-            trackList = <TrackList tracks={this.state.tracks} />;
+            trackList = <TrackIndex tracks={this.state.tracks} />;
         } else {
             trackList = <h2>No tracks uploaded yet</h2>
         }
@@ -64,9 +64,7 @@ class Profile extends React.Component {
             <div>
                 {this.renderRedirect()}
                 <h1>{this.state.user.username}</h1>
-                <ul>
-                    {trackList}
-                </ul>
+                {trackList}
             </div>
             
         )

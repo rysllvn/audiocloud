@@ -6,22 +6,22 @@ class Upload extends React.Component {
 
         this.state = {
             title: '',
-            description: '',
             audioFile: null
         };
 
         this.handleFile = this.handleFile.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.updateTitle = this.updateTitle.bind(this);
     }
 
     handleFile(e) {
         this.setState({audioFile: e.currentTarget.files[0]})
     }
 
-    update(field) {
-        return e => this.setState({
-            [field]: e.currentTarget.value
-        });
+    updateTitle(e) {
+        this.setState({
+            title: e.currentTarget.value
+        })
     }
 
     handleSubmit(e) {
@@ -53,15 +53,8 @@ class Upload extends React.Component {
                         <input 
                             id="title"
                             type="text"
-                            onChange={this.update('title')}
+                            onChange={this.updateTitle}
                             placeholder="Title"
-                        />
-                    </label>
-
-                    <label>Description
-                        <input 
-                            type="text"
-                            onChange={this.update('description')}
                         />
                     </label>
 

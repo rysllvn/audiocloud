@@ -13,10 +13,10 @@ const LoggedInRight = ({history, logout, currentUser}) => (
         <NavLink
             activeClassName="header-nav-selected"
             to="/upload" className="nav-upload"
-        ><p>Upload</p></NavLink>
+        >Upload</NavLink>
         <Link
             to={`/users/${currentUser.id}`}
-            className="nav-username"
+            className="nav-upload"
         ><div>{currentUser.username}</div></Link>
         <a 
             className="nav-alerts"

@@ -8,13 +8,7 @@
 
 ActiveRecord::Base.transaction do
     user1 = User.new
-    user1.username = 'demo_user'
+    user1.username = 'bobert'
     user1.password = 'goodpass'
     user1.save
-
-    track1 = Track.new
-    track1.title = 'Night Owl'
-    track1.user_id = user1.id
-    track1.save
-    track1.audio.attach(io: File.open(Rails.root.join('app','assets','audio','Broke_For_Free','Night_Owl.mp3')), filename: "Night_Owl.mp3")
 end
