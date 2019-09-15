@@ -4,10 +4,11 @@ import Upload from './upload';
 // const mapStateToProps = state => ({
 //   });
   
-// const mapDispatchToProps = dispatch => ({
-// });
+const mapDispatchToProps = dispatch => ({
+    // postTrack: track => dispatch(postTrack(track))
+});
   
 export default connect(
     null,
-    null
+    mapDispatchToProps
 )(Upload)

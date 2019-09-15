@@ -13,6 +13,13 @@ class Api::TracksController < ApplicationController
     end
 
     def create
+        track = Track.new(track_params)
+        track.user_id = current_user.id
+        if track.save
+            render json: {message: "yay track added"}
+        else
+            render json: track.errors.full_messages
+        end
     end
 
     def update
@@ -24,6 +31,6 @@ class Api::TracksController < ApplicationController
     private
 
     def track_params
-        params.require(:track).permit(:title, :description)
+        params.require(:track).permit(:title, :description, :audio)
     end
 end

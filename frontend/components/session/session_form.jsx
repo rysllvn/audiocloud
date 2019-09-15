@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       username: '',
       password: '',
@@ -21,7 +22,7 @@ class SessionForm extends React.Component {
 
   demoLogin() {
     this.setState({
-      username: 'demo_user',
+      username: 'ryan',
       password: 'goodpass'
     }, () => document.getElementById("submit").click());
   }
@@ -83,18 +84,16 @@ class SessionForm extends React.Component {
           >Login with demo user credentials</button>        
 
           <form onSubmit={this.handleSubmit} className="login-form-box">
-            <div className="auth-errors">{this.renderErrors()}</div>
+            <p className="auth-errors">{this.renderErrors()}</p>
             <div className="login-form">
-              <br/>
               <label>
-                <br/>
                 <input 
                   id="username"
                   type="text"
-                  value={this.state.username}
                   onChange={this.update('username')}
                   className="login-input"
                   placeholder="Username"
+                  maxLength="24"
                 />
               </label>
               <br/>
@@ -103,10 +102,10 @@ class SessionForm extends React.Component {
                 <input 
                   id="password"
                   type="password"
-                  value={this.state.password}
                   onChange={this.update('password')}
                   className="login-input"
                   placeholder="Password"
+                  maxLength="24"
                 />
               </label>
               <br/>
@@ -119,7 +118,9 @@ class SessionForm extends React.Component {
             onClick={() => this.setModalStatus(this.otherForm)}
           >{this.otherFormNice}</button> 
           <p className="disclaimer">
-            Thank you for taking the time to visit my project. You can find more projects I have done here <Link className="link-privacy" to="/otherprojects">Projects and information.</Link></p>
+            Hope you enjoy the project! You can find more projects I have done here 
+            <Link className="link-privacy" to="/otherprojects">Projects and information.</Link>
+          </p>
         </div>
       </div>
     );

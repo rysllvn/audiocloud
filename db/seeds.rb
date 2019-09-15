@@ -14,64 +14,7 @@ ActiveRecord::Base.transaction do
 
     track1 = Track.new
     track1.title = 'Night Owl'
-    track1.description = 'Directionless EP'
     track1.user_id = user1.id
     track1.save
-    track1.audio.attach(io: File.open("/home/ryan/Desktop/music/Broke_For_Free/Night_Owl.mp3"), filename: "Night_Owl.mp3")
-
-    track2 = Track.new
-    track2.title = 'My Always Mood'
-    track2.description = 'Directionless EP'
-    track2.user_id = user1.id
-    track2.save
-    track2.audio.attach(io: File.open("/home/ryan/Desktop/music/Broke_For_Free/My_Always_Mood.mp3"), filename: "My_Always_Mood.mp3")
-
-    
-    # track02 = Track.new
-    # track02.title = 'Remix of Remix of Remix of Night call'
-    # track02.description = 'Remixes on remixes'
-    # track02.user_id = user1.id
-    # track02.save
-
-    # user2 = User.new
-    # user2.username = 'Broke for Free'
-    # user2.password = SecureRandom.base64
-    # user2.save
-
-    # track1 = Track.new
-    # track1.title = 'Night Owl'
-    # track1.description = 'Directionless EP'
-    # track1.user_id = user2.id
-    # track1.save
-
-    # track2 = Track.new
-    # track2.title = 'My Always Mood'
-    # track2.description = 'Directionless EP'
-    # track2.user_id = user2.id
-    # track2.save
-
-    # track3 = Track.new
-    # track3.title = 'Day Bird'
-    # track3.description = 'Directionless EP'
-    # track3.user_id = user2.id
-    # track3.save
-
-    # track4 = Track.new
-    # track4.title = 'My Luck'
-    # track4.description = 'Directionless EP'
-    # track4.user_id = user2.id
-    # track4.save
-
-    # track5 = Track.new
-    # track5.title = 'Mells Parade'
-    # track5.description = 'Directionless EP'
-    # track5.user_id = user2.id
-    # track5.save
-
-    # track6 = Track.new
-    # track6.title = 'Only Instrumental'
-    # track6.description = 'Directionless EP'
-    # track6.user_id = user2.id
-    # track6.save
-
+    track1.audio.attach(io: File.open(Rails.root.join('app','assets','audio','Broke_For_Free','Night_Owl.mp3')), filename: "Night_Owl.mp3")
 end
