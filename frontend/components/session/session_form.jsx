@@ -42,7 +42,8 @@ class SessionForm extends React.Component {
           modalClass: 'modal-content-out',
           modalContainerClass: 'modal-out'
         })
-        setTimeout(() => this.setModalStatus(false), 300);
+        // setTimeout(() => this.setModalStatus(false), 400);
+        this.setModalStatus(false)
         this.props.history.push({pathname: "/explore"});
       });
   }

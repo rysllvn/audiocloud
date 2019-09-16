@@ -4,9 +4,9 @@ import {  NavLink, Link } from 'react-router-dom';
 const HeaderNav = ({loggedIn}) => {
     let logo;
     if (loggedIn) {
-        logo = <Link to="/explore" className="logo"></Link>;
+        logo = <Link to="/explore" className="logo-link"></Link>;
     } else {
-        logo = <Link to="/" className="logo"></Link>;
+        logo = <Link to="/" className="logo-link"></Link>;
     }
     return (
         <nav className="header-left">

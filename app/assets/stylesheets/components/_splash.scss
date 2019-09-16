@@ -1,0 +1,93 @@
+.splash {
+    box-sizing: border-box;
+    margin: auto;
+    height: 100vh;
+    max-width: 1240px;
+	font-family: $sans-serif;
+    font-size: 12px;
+    background-color: white;
+    border-top-width: 4px;
+    border-top-style: solid;
+    border-top-color: rgb(255, 85, 0);
+}
+
+.header-splash {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: grey;
+    height: 450px;
+    width: 100%;
+    padding: 20px;
+    background: url(/assets/landing_header_1.jpg);
+}
+
+.inner-header-splash {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-splash-left {
+    display: flex;
+    border: 1px solid black;
+    height: 46px;
+    align-content: center;
+    color: #fff;
+    justify-content: flex-start;
+}
+
+.splash-welcome {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.logo {
+    background: url(/assets/cloud-6cc8a83….png) no-repeat 12px 11px;
+    // background-size: 48px 22px;
+    height: 46px;
+    width: 69px;
+    // box-sizing: border-box;
+    // outline: 0;
+    z-index: 5;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: bold;
+    align-content: center;
+}
+
+.splash-welcome {
+    color: #fff;
+}
+
+.splash-center {
+    margin-top: 49px;
+    display: flex;
+    justify-content: center;
+}
+
+.splash-search-form {
+    display:flex;
+    justify-content: space-between;
+    margin-right: 20px;
+}
+
+.splash-search {
+    height: 46px;
+    width: 600px;
+    font-size: 14px;
+}
+
+.splash-upload {
+    height: 46px;
+    width: 169px;
+    background-color: $background-button-main;
+    border-radius: 3px;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    padding: 8px;
+    margin-left: 20px;
+}
