@@ -29,7 +29,7 @@ class SessionForm extends React.Component {
         modalClass: 'modal-content-out',
         modalContainerClass: 'modal-out'
       })
-      this.props.loginUser({username: 'ryan', password: 'goodpass'});
+      this.props.loginUser({username: 'ryan', password: 'qwerty'});
       setTimeout(() => this.setModalStatus(false), 200);
     });
   }

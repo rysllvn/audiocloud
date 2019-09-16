@@ -7,7 +7,13 @@ class TrackTile extends React.Component {
 
     render() {
         <div>
-            <h3>Track Tile{this.props.track.title}</h3>
+            <li className="track-panel">
+                <button className="play-button-small" onClick={() => this.props.setCurrentTrack(this.props.track.id)}>Play</button>
+                <div className="track-user-title">
+                    <p>{this.props.user.username}</p>
+                    <div>{this.props.track.title}</div>  
+                </div>
+            </li>    
         </div>
     }
 }

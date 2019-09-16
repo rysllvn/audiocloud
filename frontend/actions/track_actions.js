@@ -13,7 +13,17 @@ export const receiveTrack = track => ({
     track
 });
 
+export const getLatestTracks = num => dispatch => (
+    TrackUtil.getLatestTracks(num)
+        .then(tracks => dispatch(receiveTracks(tracks)))
+)
+
 export const getUserTracks = userId => dispatch => (
     TrackUtil.getUserTracks(userId)
         .then(tracks => dispatch(receiveTracks(tracks)))
+);
+
+export const createTrack = track => dispatch => (
+    TrackUtil.createTrack(track)
+        .then(track => dispatch(receiveTrack(track)))
 );

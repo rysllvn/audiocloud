@@ -5,15 +5,17 @@ class PlayControls extends React.Component {
         super(props);
     }
 
+    componentDidUpdate(prevProps) {
+        if (this.props.currentTrack !== prevProps.currentTrack) document.getElementById("audio").play();
+    }
+
     render () {
         console.log(this.props.currentTrack);
         let src;
-        if (this.props.currentTrack) {
-            src = this.props.tracks[this.props.currentTrack].audioUrl;
-        }
+        if (this.props.currentTrack) src = this.props.tracks[this.props.currentTrack].audioUrl;
         return (
             <section className="play-controls">
-                    <audio src={src} controls autoplay />
+                <audio id="audio" src={src} controls />
             </section>
         )
     }

@@ -1,9 +1,21 @@
 import React from 'react';
+import TrackPanelIndex from '../tracks/track_panel_index';
 
 class Explore extends React.Component {
     constructor(props) {
         super(props);
-        this.state
+        this.state = {
+            latest: [],
+        };
+    }
+
+    componentDidMount() {
+        this.props.getLatestTracks(5)
+            .then( result => {
+                this.setState({
+                    latest: Object.values(result.tracks)
+                })
+            })
     }
 
     render() {
@@ -13,6 +25,7 @@ class Explore extends React.Component {
                     <div className="panel-title">
                         <h2>New Music Now</h2>
                         <p>load last 4 here</p>
+                        <TrackPanelIndex tracks={this.state.latest} />
                     </div>
                 </div>
                 <div className="panel">

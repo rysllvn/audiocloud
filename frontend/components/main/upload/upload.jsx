@@ -6,16 +6,22 @@ class Upload extends React.Component {
 
         this.state = {
             title: '',
-            audioFile: null
+            audioFile: null,
+            photoFile: null
         };
 
-        this.handleFile = this.handleFile.bind(this);
+        this.handleAudio = this.handleAudio.bind(this);
+        this.handlePhoto = this.handlePhoto.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.updateTitle = this.updateTitle.bind(this);
     }
 
-    handleFile(e) {
+    handleAudio(e) {
         this.setState({audioFile: e.currentTarget.files[0]})
+    }
+
+    handlePhoto(e) {
+
     }
 
     updateTitle(e) {
@@ -31,14 +37,7 @@ class Upload extends React.Component {
         formData.append('track[title]', this.state.title);
         formData.append('track[description]', this.state.description);
         formData.append('track[audio]', this.state.audioFile);
-        $.ajax({
-            url: '/api/tracks',
-            method: 'POST',
-            data: formData,
-            contentType: false,
-            processData: false
-        }).then((response) => console.log(response.message))
-        
+        this.props.createTrack(formData);        
     }
 
     render() {
@@ -61,7 +60,14 @@ class Upload extends React.Component {
                     <label>Audio File
                         <input 
                             type="file"
-                            onChange={this.handleFile}
+                            onChange={this.handleAudio}
+                        />
+                    </label>
+
+                    <label>
+                        <input
+                            type="file"
+                            onChange={this.handlePhoto}
                         />
                     </label>
 
