@@ -18,6 +18,7 @@ const mapStateToProps = ({ errors, session }) => {
 const mapDispatchToProps = dispatch => {
     return {
         processForm: (user) => dispatch(login(user)),
+        loginUser: user => dispatch(login(user)),
         receiveErrors: errors => dispatch(receiveErrors(errors)),
         setModalStatus: status => dispatch(setModalStatus(status))
     };

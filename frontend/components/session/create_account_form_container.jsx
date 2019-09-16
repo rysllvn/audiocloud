@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { signup, receiveErrors } from '../../actions/session_actions';
+import { login, signup, receiveErrors } from '../../actions/session_actions';
 import { setModalStatus } from '../../actions/ui_actions';
 import SessionForm from './session_form';
 
@@ -17,6 +17,7 @@ const mapStateToProps = ({ errors, session }) => {
 
 const mapDispatchToProps = dispatch => ({
     processForm: (user) => dispatch(signup(user)),
+    loginUser: user => dispatch(login(user)),
     receiveErrors: errors => dispatch(receiveErrors(errors)),
     setModalStatus: status => dispatch(setModalStatus(status))
 });

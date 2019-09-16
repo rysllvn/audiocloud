@@ -24,7 +24,14 @@ class SessionForm extends React.Component {
     this.setState({
       username: 'ryan',
       password: 'goodpass'
-    }, () => document.getElementById("submit").click());
+    }, () => {
+      this.setState({
+        modalClass: 'modal-content-out',
+        modalContainerClass: 'modal-out'
+      })
+      this.props.loginUser({username: 'ryan', password: 'goodpass'});
+      setTimeout(() => this.setModalStatus(false), 200);
+    });
   }
 
   update(field) {
@@ -42,8 +49,8 @@ class SessionForm extends React.Component {
           modalClass: 'modal-content-out',
           modalContainerClass: 'modal-out'
         })
-        // setTimeout(() => this.setModalStatus(false), 400);
-        this.setModalStatus(false)
+        setTimeout(() => this.setModalStatus(false), 400);
+        // this.setModalStatus(false)
         this.props.history.push({pathname: "/explore"});
       });
   }
