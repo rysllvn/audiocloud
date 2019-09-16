@@ -2,9 +2,9 @@ import { connect } from 'react-redux';
 import Main from './main';
 import { setModalStatus } from '../../actions/ui_actions';
 
-const mapStateToProps = ({ ui: { modal } }) => {
+const mapStateToProps = state => {
     return {
-      modal: modal
+      modal: state.ui.modal
     };
   };
   

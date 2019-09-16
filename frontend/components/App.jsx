@@ -7,7 +7,7 @@ import { AuthRoute } from '../util/route_util';
 
 import HeaderContainer from './header/header_container';
 import MainContainer from './main/main_container';
-import PlayControls from './playcontrols/play_controls';
+import PlayControlsContainer from './playcontrols/play_controls_container';
 import SplashContainer from './splash/splash-container';
 
 const MainSite = () => (
@@ -23,7 +23,7 @@ const App = () => (
       <AuthRoute exact path="/" component={SplashContainer}/>
       <Route component={MainSite}/>
     </Switch>
-    <PlayControls />
+    <PlayControlsContainer />
   </div>
 );
 

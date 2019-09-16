@@ -3,18 +3,17 @@ import React from 'react';
 class PlayControls extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            currentTrack: props.trackId,
-            srcUrl: null,
-            tracks: props.tracks
-        };
-    }    
+    }
 
     render () {
+        console.log(this.props.currentTrack);
+        let src;
+        if (this.props.currentTrack) {
+            src = this.props.tracks[this.props.currentTrack].audioUrl;
+        }
         return (
             <section className="play-controls">
-                    <audio controls/>
+                    <audio src={src} controls autoplay />
             </section>
         )
     }
