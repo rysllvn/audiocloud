@@ -5,10 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+#   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
 
 ActiveRecord::Base.transaction do
-    user1 = User.new
-    user1.username = 'bobert'
-    user1.password = 'goodpass'
-    user1.save
+    User.destroy_all
+    user1 = User.create(username: 'ryan', password: 'qwerty')
+    user2 = User.create(username: 'Broke for Free', password: SecureRandom::base64)
+
+    Track.destroy_all
 end

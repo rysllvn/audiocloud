@@ -22,7 +22,7 @@ class SessionForm extends React.Component {
 
   demoLogin() {
     this.setState({
-      username: 'bobert',
+      username: 'ryan',
       password: 'goodpass'
     }, () => document.getElementById("submit").click());
   }

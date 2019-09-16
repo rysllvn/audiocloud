@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PlayControls from './play_controls';
 
 const mapStateToProps = state => ({
-    trackId: state.ui.currentTrack,
+    currentTrack: state.ui.currentTrack,
     tracks: state.entities.tracks
 });
 

@@ -1,12 +1,14 @@
 .form-upload-container {
-    margin: auto;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
+    align-items: center;
 }
 
 .form-upload {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
+    height: 300px;
 }

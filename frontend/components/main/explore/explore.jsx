@@ -1,5 +1,4 @@
 import React from 'react';
-import SimpleTileGallery from '../tracks/simple_tile_gallery';
 
 class Explore extends React.Component {
     constructor(props) {
@@ -13,19 +12,19 @@ class Explore extends React.Component {
                 <div className="panel">
                     <div className="panel-title">
                         <h2>New Music Now</h2>
-                        <p>The latest hits</p>
+                        <p>load last 4 here</p>
                     </div>
                 </div>
                 <div className="panel">
                     <div className="panel-title">
                         <h2>Audiocloud Charts</h2>
-                        <p>The most listened to tracks</p>
+                        <p>most comments here</p>
                     </div>
                 </div>
                 <div className="panel">
                     <div className="panel-title">
                         <h2>Artists you should know</h2>
-                        <p>Artists you might like</p>
+                        <p>random list of artists/songs</p>
                     </div>
                 </div>
             </div>

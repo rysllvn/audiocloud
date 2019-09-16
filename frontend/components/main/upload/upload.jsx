@@ -49,7 +49,7 @@ class Upload extends React.Component {
                     onSubmit={this.handleSubmit}
                     className="form-upload"
                 >
-                    <label>Title
+                    <label>
                         <input 
                             id="title"
                             type="text"
