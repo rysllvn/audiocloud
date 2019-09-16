@@ -19,7 +19,7 @@
     height: 450px;
     width: 100%;
     padding: 20px;
-    background: url(/assets/landing_header_1.jpg);
+    background: image-url('landing_header_1.jpg');
 }
 
 .inner-header-splash {
@@ -29,7 +29,6 @@
 
 .header-splash-left {
     display: flex;
-    border: 1px solid black;
     height: 46px;
     align-content: center;
     color: #fff;
@@ -43,16 +42,14 @@
 }
 
 .logo {
-    background: url(/assets/cloud-6cc8a83….png) no-repeat 12px 11px;
-    // background-size: 48px 22px;
+    background: image-url('cloud.png') no-repeat 12px 11px;
     height: 46px;
     width: 69px;
-    // box-sizing: border-box;
-    // outline: 0;
     z-index: 5;
 }
 
 .logo-text {
+    padding-top: 4px;
     font-size: 20px;
     font-weight: bold;
     align-content: center;
