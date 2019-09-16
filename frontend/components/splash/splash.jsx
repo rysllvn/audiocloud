@@ -46,6 +46,10 @@ class Splash extends React.Component {
                         <p>or</p>
                         <Link className="splash-upload" to="/upload">Upload</Link>
                 </div>
+
+                <div>
+                    <h1>Track index down here</h1>
+                </div>
             </div>
         )
     }
