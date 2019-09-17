@@ -8,6 +8,7 @@ import { selectUserTracks } from '../../../reducers/selectors';
 
 const msp = (state, ownProps) => ({
     user: state.entities.users[ownProps.match.params.userId],
+    currentUserId: state.session.id,
     tracks: selectUserTracks(state, ownProps.match.params.userId)
 });
   

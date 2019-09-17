@@ -1,5 +1,5 @@
 import React from 'react';
-import TrackPanelIndex from '../tracks/track_panel_index';
+import TrackTileIndex from '../tracks/track_tile_index';
 
 class Profile extends React.Component {
     constructor(props) {
@@ -25,11 +25,13 @@ class Profile extends React.Component {
     }
 
     render() {
+        // const uploadProfilePic = <button>Upload Profile Pic</button>;
         if (!this.props.user) return null;
         return (
             <div>
                 <h1>{this.props.user.username}</h1>
-                <TrackPanelIndex tracks={this.props.tracks} />
+                {/* {this.props.user.id === this.props.currentUserId && uploadProfilePic} */}
+                <TrackTileIndex tracks={this.props.tracks} />
             </div>
         )
     }

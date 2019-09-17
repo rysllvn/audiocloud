@@ -1,0 +1,24 @@
+.track-tile-index {
+    display: flex;
+    justify-content: space-between;
+}
+
+.track-tile {
+    box-sizing: border-box;
+    height: 172px;
+    width: 172px;
+    border: 1px solid black;
+    background-image: image-url('testart.jpeg')
+}
+
+.track-tile-title {
+    display: flex;
+    flex-direction: column;
+}
+
+.play-button {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    color: white;
+}
