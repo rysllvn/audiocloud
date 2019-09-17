@@ -29,7 +29,7 @@ class Profile extends React.Component {
             .then(
                 result => {
                     this.setState({
-                        tracks: Object.values(result.tracks)
+                        tracks: Object.values(result.data.tracks)
                     })
                 }
             ).fail(() => {

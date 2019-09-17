@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
 import Explore from './explore';
-import { getLatestTracks } from '../../../actions/track_actions';
+import { getTracks } from '../../../actions/track_actions';
 
 const msp = state => ({
 
 });
 
 const mdp = dispatch => ({
-    getLatestTracks: num => dispatch(getLatestTracks(num))
+    getTracks: () => dispatch(getTracks())
 });
 
 export default connect(

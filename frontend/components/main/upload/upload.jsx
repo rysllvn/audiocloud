@@ -32,7 +32,6 @@ class Upload extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        console.table(this.state)
         const formData = new FormData();
         formData.append('track[title]', this.state.title);
         formData.append('track[description]', this.state.description);
@@ -54,24 +53,22 @@ class Upload extends React.Component {
                             type="text"
                             onChange={this.updateTitle}
                             placeholder="Title"
-                        />
+                        /> 
                     </label>
-
-                    <label>Audio File
+                    <label>Audio
                         <input 
                             type="file"
                             onChange={this.handleAudio}
                         />
                     </label>
-
-                    <label>
+                    <label>Photo
                         <input
                             type="file"
                             onChange={this.handlePhoto}
                         />
                     </label>
 
-                    <input type="submit" />
+                    <input className="session-submit" type="submit" />
                 </form>
             </div>
         )

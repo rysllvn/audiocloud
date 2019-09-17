@@ -15,10 +15,9 @@ export const createTrack = track => (
     })
 )
 
-export const getLatestTracks = num => (
+export const getTracks = num => (
     $.ajax({
         method: 'GET',
-        url: 'api/tracks',
-        data: { track: { num_tracks: num } }
+        url: 'api/tracks'
     })
 );

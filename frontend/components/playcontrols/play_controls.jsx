@@ -10,7 +10,6 @@ class PlayControls extends React.Component {
     }
 
     render () {
-        console.log(this.props.currentTrack);
         let src;
         if (this.props.currentTrack) src = this.props.tracks[this.props.currentTrack].audioUrl;
         return (

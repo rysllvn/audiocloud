@@ -45,7 +45,7 @@ class Main extends React.Component {
                     <ProtectedRoute exact path="/upload" component={UploadContainer} />
                     <ProtectedRoute exact path="/stream" component={Stream} />
                     <AuthRoute exact path="/login" component={RedirectLoginContainer} />
-                    <Route exact path="users/ohno" component={UserNotFound} />
+                    <Route exact path="/users/ohno" component={UserNotFound} />
                     <Route path ="/users/:userId" component={ProfileContainer} />
                     <Route component={NoMatch} />
                 </Switch>

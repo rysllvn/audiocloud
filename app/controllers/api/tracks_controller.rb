@@ -3,8 +3,10 @@ class Api::TracksController < ApplicationController
         if params[:user_id]
             user = User.find(params[:user_id])
             @tracks = user.tracks
+            @users = [user]
         else
-            @tracks = Track.last(track_params[:num_tracks])
+            @tracks = Track.all
+            @users = User.all
         end
     end
 
@@ -31,6 +33,6 @@ class Api::TracksController < ApplicationController
     private
 
     def track_params
-        params.require(:track).permit(:title, :audio, :image, :num_tracks)
+        params.require(:track).permit(:title, :audio, :image)
     end
 end

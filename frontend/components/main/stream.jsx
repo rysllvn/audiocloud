@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Stream = () => (
-    <h1>Stream page</h1>
+    <h1 className="main-headers">The latest posts from those you are following</h1>
 );
 
 export default Stream;
