@@ -1,72 +1,34 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-import TrackPanelIndex from '../tracks/track_panel_index';
 
 class Profile extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            user: {},
-            tracks: [],
-            redirect: false
-        };
     }
 
     fetchUserData(userId) {
         this.props.getUser(userId)
-            .then(
-                result => {
-                    this.setState({
-                        user: result.user
-                    })
-                },
-            ).fail(() => {
-                this.setState({redirect: true})
-            });
-
-        this.props.getUserTracks(userId)
-            .then(
-                result => {
-                    this.setState({
-                        tracks: Object.values(result.data.tracks)
-                    })
-                }
-            ).fail(() => {
-                console.log('no tracks found')
+            .fail(() => {
+                this.props.history.push('/ohno');
             });
     }
 
     componentDidMount() {
-        this.fetchUserData(this.props.userId);
+        this.fetchUserData(this.props.match.params.userId);
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props.userId !== prevProps.userId) {
-            this.fetchUserData(this.props.userId);
-        }
-    }
-    
-    renderRedirect()  {
-        if (this.state.redirect) {
-          return <Redirect to='/users/ohno' />
+        if (this.props.match.params.userId !== prevProps.match.params.userId) {
+            this.fetchUserData(this.props.match.params.userId);
         }
     }
 
     render() {
-        let trackList;
-        if (this.state.tracks.length !== 0) {
-            trackList = <TrackPanelIndex tracks={this.state.tracks} />;
-        } else {
-            trackList = <h2>No tracks uploaded yet</h2>
-        }
+        if (!this.props.user) return null;
         return (
             <div>
-                {this.renderRedirect()}
-                <h1>{this.state.user.username}</h1>
-                {trackList}
+                <h1>{this.props.user.username}</h1>
             </div>
-            
         )
     }
 }

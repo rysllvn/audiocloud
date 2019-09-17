@@ -12,6 +12,8 @@ class Api::TracksController < ApplicationController
 
     def show
         @track = Track.find(params[:id])
+        user_id = @track.user_id
+        @user = User.find(user_id)
     end
 
     def create

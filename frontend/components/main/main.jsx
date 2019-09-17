@@ -39,11 +39,10 @@ class Main extends React.Component {
             <div className="main">
                 {this.props.modal && this.modal()}
                 <Switch>
-                    {/* <AuthRoute exact path="/" component={Explore} /> */}
                     <Route exact path="/explore" component={ExploreContainer} />
+                    <ProtectedRoute exact path="/stream" component={Stream} />
                     <ProtectedRoute exact path="/library" component={Library} />
                     <ProtectedRoute exact path="/upload" component={UploadContainer} />
-                    <ProtectedRoute exact path="/stream" component={Stream} />
                     <AuthRoute exact path="/login" component={RedirectLoginContainer} />
                     <Route exact path="/users/ohno" component={UserNotFound} />
                     <Route path ="/users/:userId" component={ProfileContainer} />

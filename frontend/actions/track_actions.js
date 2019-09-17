@@ -13,10 +13,15 @@ export const receiveTrack = track => ({
     track
 });
 
+export const getTrack = id => dispatch => (
+    TrackUtil.getTrack(id)
+        .then(data => dispatch(receiveTrack(data)))
+);
+
 export const getTracks = num => dispatch => (
     TrackUtil.getTracks(num)
         .then(data => dispatch(receiveTracks(data)))
-)
+);
 
 export const getUserTracks = userId => dispatch => (
     TrackUtil.getUserTracks(userId)
