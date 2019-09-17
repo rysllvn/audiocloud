@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import TrackPanelIndex from '../tracks/track_panel_index';
 
 class Profile extends React.Component {
     constructor(props) {
@@ -11,6 +11,7 @@ class Profile extends React.Component {
             .fail(() => {
                 this.props.history.push('/ohno');
             });
+        this.props.getUserTracks(userId);
     }
 
     componentDidMount() {
@@ -28,6 +29,7 @@ class Profile extends React.Component {
         return (
             <div>
                 <h1>{this.props.user.username}</h1>
+                <TrackPanelIndex tracks={this.props.tracks} />
             </div>
         )
     }

@@ -1,11 +1,14 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+
 import Profile from './profile';
 import { getUser } from '../../../actions/user_actions';
 import { getUserTracks } from '../../../actions/track_actions';
-import { withRouter } from 'react-router-dom';
+import { selectUserTracks } from '../../../reducers/selectors';
 
 const msp = (state, ownProps) => ({
-    user: state.entities.users[ownProps.match.params.userId]
+    user: state.entities.users[ownProps.match.params.userId],
+    tracks: selectUserTracks(state, ownProps.match.params.userId)
 });
   
 const mdp = dispatch => ({
