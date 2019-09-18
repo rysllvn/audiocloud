@@ -22,7 +22,7 @@ class Profile extends React.Component {
 
     render() {
         let profilePic = null;
-        if (this.props.user.imageUrl) {
+        if (this.props.user && this.props.user.imageUrl) {
             profilePic = <div className="profile-pic"><img src={this.props.user.imageUrl}/></div>;
         }
         const uploadProfilePic = <button className="upload-pic-button">Upload</button>;

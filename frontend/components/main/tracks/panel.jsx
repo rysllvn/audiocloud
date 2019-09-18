@@ -8,8 +8,13 @@ class Panel extends React.Component {
     }
 
     render() {
+        let image = null;
+        if (this.props.track.imageUrl) {
+            image = <img className="panel-image" src={this.props.track.imageUrl}/>
+        }
         return (
-            <li className="track-panel">                
+            <li className="track-panel">       
+                <div>{image}</div>
                 <ToggleButtonContainer trackId={this.props.track.id} type="panel-toggle"/>
                 <div className="track-panel-title">
                     <Link to={`/users/${this.props.user.id}`}>{this.props.user.username}</Link>

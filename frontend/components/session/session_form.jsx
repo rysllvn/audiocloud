@@ -50,7 +50,6 @@ class SessionForm extends React.Component {
           modalContainerClass: 'modal-out'
         })
         setTimeout(() => this.setModalStatus(false), 400);
-        // this.setModalStatus(false)
         this.props.history.push({pathname: "/explore"});
       });
   }
@@ -67,7 +66,6 @@ class SessionForm extends React.Component {
     );
   }
 
-  //From stack overflow https://stackoverflow.com/questions/34349136/react-how-to-capture-only-parents-onclick-event-and-not-children
   onModalContentClick(event) {
     if (event.target === event.currentTarget) {
       this.setState({

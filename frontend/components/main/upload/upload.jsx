@@ -25,7 +25,7 @@ class Upload extends React.Component {
     }
 
     handlePhoto(e) {
-
+        this.setState({photoFile: e.currentTarget.files[0]})
     }
 
     updateTitle(e) {
@@ -42,16 +42,16 @@ class Upload extends React.Component {
         const formData = new FormData();
         formData.append('track[title]', this.state.title);
         formData.append('track[audio]', this.state.audioFile);
+        formData.append('track[image]', this.state.photoFile);
+        
         this.props.createTrack(formData)
             .then(() => {
-                debugger
                 this.setState({
                     uploading: false,
                     status: 'Upload complete'
                 });
             })
             .fail(errors => {
-                debugger
                 this.setState({
                     uploading: false,
                     status: 'Upload failed'
@@ -76,14 +76,13 @@ class Upload extends React.Component {
                     color={'#123abc'}
                     loading={this.state.uploading}
                 />
-                <p>AHHHHHHHHHHHH</p>
             </div> 
             )
         }
         return (
             <div className="form-upload-container">
                 <h1>Upload an mp3 file</h1>
-                <h3>{this.state.status}</h3>
+                <h3 className="auth-errors">{this.state.status}</h3>
                 <form 
                     onSubmit={this.handleSubmit}
                     className="form-upload"
