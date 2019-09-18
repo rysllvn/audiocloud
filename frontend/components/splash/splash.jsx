@@ -2,10 +2,15 @@ import React from 'react';
 import LoginFormContainer from '../session/signin_form_container';
 import SignupFormContainer from '../session/create_account_form_container';
 import { Link } from 'react-router-dom';
+import TrackTileIndex from '../main/tracks/track_tile_index';
 
 class Splash extends React.Component {
     constructor(props) {
         super(props);
+    }
+
+    componentDidMount() {
+        this.props.getTracks();
     }
 
     modal() {
@@ -21,6 +26,8 @@ class Splash extends React.Component {
     }
 
     render() {
+        let tracks = Object.values(this.props.tracks);
+        let newSongs = tracks.slice(0,4);
         let {setModalStatus} = this.props;
         return (
             <div className="splash">
@@ -47,8 +54,8 @@ class Splash extends React.Component {
                         <Link className="splash-upload" to="/upload">Upload</Link>
                 </div>
 
-                <div>
-                    <h1>Track index down here</h1>
+                <div className="splash-index">
+                    <TrackTileIndex tracks={newSongs}/>
                 </div>
             </div>
         )

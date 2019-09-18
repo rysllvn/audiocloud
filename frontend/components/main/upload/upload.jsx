@@ -1,4 +1,7 @@
 import React from 'react';
+import { css } from '@emotion/core';
+
+import { ClipLoader } from 'react-spinners';
 
 class Upload extends React.Component {
     constructor(props) {
@@ -7,7 +10,8 @@ class Upload extends React.Component {
         this.state = {
             title: '',
             audioFile: null,
-            photoFile: null
+            photoFile: null,
+            uploading: false
         };
 
         this.handleAudio = this.handleAudio.bind(this);
@@ -32,14 +36,43 @@ class Upload extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        this.setState({
+            uploading: true
+        })
         const formData = new FormData();
         formData.append('track[title]', this.state.title);
         formData.append('track[description]', this.state.description);
         formData.append('track[audio]', this.state.audioFile);
-        this.props.createTrack(formData);        
+        this.props.createTrack(formData)
+            .then(() => {
+                this.setState({uploading: false})
+            })
+            .fail(() => {
+                this.setState({uploading: false})
+            });        
     }
 
     render() {
+        if (this.state.uploading) {
+            const override = css`
+                                display: block;
+                                margin: 0 auto;
+                                border-color: red;
+                            `;
+            return (
+                
+            <div className='form-upload-container'>
+                <ClipLoader 
+                    css={override}
+                    sizeUnit={"px"}
+                    size={150}
+                    color={'#123abc'}
+                    loading={this.state.uploading}
+                />
+                <p>AHHHHHHHHHHHH</p>
+            </div> 
+            )
+        }
         return (
             <div className="form-upload-container">
                 <h1>Upload an mp3 file</h1>
