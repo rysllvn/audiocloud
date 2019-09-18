@@ -7,10 +7,12 @@ class PlayControls extends React.Component {
 
     componentDidUpdate(prevProps) {
         if (this.props.currentTrack !== prevProps.currentTrack) document.getElementById("audio").play();
-        if (this.props.playing) {
-            document.getElementById("audio").play();
-        } else {
+        if (this.props.playing !== prevProps.playing) {
+            if (this.props.playing) {
+                document.getElementById("audio").play();
+            } else {
             document.getElementById("audio").pause();
+            }
         }
     }
 
@@ -19,8 +21,7 @@ class PlayControls extends React.Component {
         if (this.props.currentTrack) src = this.props.tracks[this.props.currentTrack].audioUrl;
         return (
             <section className="play-controls">
-                <button className="toggle" onClick={() => this.props.togglePlay() }>Toggle</button>
-                <audio id="audio" src={src} />
+                <audio id="audio" src={src} controls/>
             </section>
         )
     }

@@ -1,0 +1,30 @@
+.profile-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-header {
+    display: flex;
+    background-color: grey;
+    height: 260px;
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+}
+
+.upload-pic-button {
+    height: 30px;
+    position: relative;
+    top: 220px;
+    right: 280px;
+}

@@ -22,7 +22,8 @@ class Api::TracksController < ApplicationController
         if track.save
             render json: {message: "yay track added"}
         else
-            render json: track.errors.full_messages
+            debugger
+            render json: track.errors.full_messages, status: 422
         end
     end
 

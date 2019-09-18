@@ -12,19 +12,18 @@ const _defaultState = {
 
 const uiReducer = (state = _defaultState, action) => {
     Object.freeze(state);
-    let newState = Object.assign({}, state)
+    let oldState = Object.assign({}, state)
     switch(action.type) {
         case SET_MODAL_STATUS:
-            return Object.assign(newState, { modal: action.status });
+            return Object.assign(oldState, { modal: action.status });
         case SET_CURRENT_TRACK:
-            return Object.assign(newState, {currentTrack: action.trackId});
-        case TOGGLE_PLAY:
-            if (newState.playing) {
-                newState = Object.assign(newState, {playing: false});
-            } else {
-                newState = Object.assign(newState, {playing: true});
+            let changes = {
+                currentTrack: action.trackId,
+                playing: true
             }
-            return newState;
+            return Object.assign(oldState, changes);
+        case TOGGLE_PLAY:
+            return Object.assign(oldState, {playing: !oldState.playing});
         default:
             return state;
     }
