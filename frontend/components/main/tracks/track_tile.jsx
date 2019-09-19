@@ -8,16 +8,23 @@ class TrackTile extends React.Component {
     }
 
     render() {
+        let image;
+        if (this.props.track.imageUrl) {
+            image = <img className="panel-image" src={this.props.track.imageUrl}/>;
+        } else {
+            image = <img className="panel-image" src={window.defaultTrackImage}/>;
+        }
         return (
-            <li >
+            <li>
                 <div className="track-tile">
+                    {image}
                     <ToggleButtonContainer trackId={this.props.track.id} type="tile-toggle"/>
                 </div>
+
                 <div className="track-tile-title">
                     <Link to={`/users/${this.props.user.id}`}>{this.props.user.username}</Link>
                     <Link to={`tracks/${this.props.track.id}`}>{this.props.track.title}</Link>  
                 </div>
-                               
             </li>            
         )
     }

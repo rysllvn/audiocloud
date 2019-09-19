@@ -11,7 +11,8 @@ class Upload extends React.Component {
             audioFile: null,
             photoFile: null,
             uploading: false,
-            status: null
+            status: null,
+            errors: ''
         };
 
         this.handleAudio = this.handleAudio.bind(this);
@@ -21,11 +22,20 @@ class Upload extends React.Component {
     }
 
     handleAudio(e) {
-        this.setState({audioFile: e.currentTarget.files[0]})
+        if (e.currentTarget.files[0].type === "audio/mp3") {
+            this.setState({audioFile: e.currentTarget.files[0]})
+        } else {
+            this.setState({errors: 'must upload an mp3 file'})
+        }
     }
 
     handlePhoto(e) {
-        this.setState({photoFile: e.currentTarget.files[0]})
+        let type = e.currentTarget.files[0].type
+        if (type === "image/png" || type === "image/jpg" || type === "image/jpg") {
+            this.setState({photoFile: e.currentTarget.files[0]})
+        } else {
+            this.setState({errors: 'must upload a png or jpeg'})
+        }
     }
 
     updateTitle(e) {
@@ -42,7 +52,7 @@ class Upload extends React.Component {
         const formData = new FormData();
         formData.append('track[title]', this.state.title);
         formData.append('track[audio]', this.state.audioFile);
-        formData.append('track[image]', this.state.photoFile);
+        if (this.state.photoFile) formData.append('track[image]', this.state.photoFile);
         
         this.props.createTrack(formData)
             .then(() => {
@@ -83,6 +93,7 @@ class Upload extends React.Component {
             <div className="form-upload-container">
                 <h1>Upload an mp3 file</h1>
                 <h3 className="auth-errors">{this.state.status}</h3>
+                <h3 className="auth-errors">{this.state.errors}</h3>
                 <form 
                     onSubmit={this.handleSubmit}
                     className="form-upload"

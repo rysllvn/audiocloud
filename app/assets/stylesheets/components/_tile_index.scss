@@ -5,11 +5,11 @@
 }
 
 .track-tile {
+    position: relative;
     box-sizing: border-box;
     height: 172px;
     width: 172px;
     border: 1px solid black;
-    background-image: image-url('testart.jpeg')
 }
 
 .track-tile-title {
@@ -18,7 +18,7 @@
 }
 
 .tile-toggle {
-    position: relative;
+    position: absolute;
     top: 60px;
     left: 60px;
     height: 50px;
@@ -28,7 +28,7 @@
 }
 
 .tile-toggle-show {
-    position: relative;
+    position: absolute;
     top: 60px;
     left: 60px;
     height: 50px;

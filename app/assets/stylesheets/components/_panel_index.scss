@@ -10,6 +10,12 @@
 .track-panel {
     height: 169px;
     border: 1px solid #888;
+    display: flex;
+}
+
+.track-panel-title {
+    display: flex;
+    flex-direction: column;
 }
 
 .panel-toggle {
@@ -33,6 +39,6 @@
 }
 
 .panel-image {
-    height: 100px;
-    width: 100px;
+    height: 169px;
+    width: 169px;
 }

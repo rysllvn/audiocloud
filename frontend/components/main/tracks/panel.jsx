@@ -8,9 +8,11 @@ class Panel extends React.Component {
     }
 
     render() {
-        let image = null;
+        let image;
         if (this.props.track.imageUrl) {
-            image = <img className="panel-image" src={this.props.track.imageUrl}/>
+            image = <img className="panel-image" src={this.props.track.imageUrl}/>;
+        } else {
+            image = <img className="panel-image" src={window.defaultTrackImage}/>;
         }
         return (
             <li className="track-panel">       
