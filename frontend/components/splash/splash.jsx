@@ -43,7 +43,7 @@ class Splash extends React.Component {
                             <button className="orange-button" onClick={() => setModalStatus('createAccount')}>Create account</button>
                         </div>
                     </div>
-                    <div><h3 className="splash-welcome">Keep on improving this site</h3></div>
+                    <div><h3 className="splash-welcome">Audiocloud, a Souncloud clone</h3></div>
                 </div>
 
                 <div className="splash-center">

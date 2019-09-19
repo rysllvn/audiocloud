@@ -17,29 +17,3 @@
     flex-direction: column;
 }
 
-.tile-toggle {
-    position: absolute;
-    top: 60px;
-    left: 60px;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    color: white;
-}
-
-.tile-toggle-show {
-    position: absolute;
-    top: 60px;
-    left: 60px;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    color: white;
-}
-
-.splash-index {
-    margin-top: 50px;
-}
-
-.tile-toggle{ display:none; }
-.track-tile:hover .tile-toggle{ display:block; }

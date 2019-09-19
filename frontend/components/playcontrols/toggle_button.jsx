@@ -37,8 +37,12 @@ class ToggleButton extends React.Component {
         let buttonText;
         let name = this.props.type;
         if (this.props.trackId === this.props.currentTrack) {
-            this.props.playing ? buttonText = pauseButton : buttonText = playButton;
-            if (this.props.playing) name = this.props.type + "-show";
+            if (this.props.playing) {
+                buttonText = pauseButton
+                name = this.props.type + "-show";
+            } else {
+                buttonText = playButton;
+            }
         } else {
             buttonText = playButton;
         }

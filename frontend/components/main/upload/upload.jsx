@@ -23,18 +23,20 @@ class Upload extends React.Component {
 
     handleAudio(e) {
         if (e.currentTarget.files[0].type === "audio/mp3") {
-            this.setState({audioFile: e.currentTarget.files[0]})
+            this.setState({audioFile: e.currentTarget.files[0]});
         } else {
-            this.setState({errors: 'must upload an mp3 file'})
+            e.currentTarget.value = null;
+            this.setState({errors: 'must upload an mp3 file'});
         }
     }
 
     handlePhoto(e) {
         let type = e.currentTarget.files[0].type
-        if (type === "image/png" || type === "image/jpg" || type === "image/jpg") {
-            this.setState({photoFile: e.currentTarget.files[0]})
+        if (type === "image/png" || type === "image/jpg" || type === "image/jpeg") {
+            this.setState({photoFile: e.currentTarget.files[0]});
         } else {
-            this.setState({errors: 'must upload a png or jpeg'})
+            e.currentTarget.value = null;
+            this.setState({errors: 'must upload a png or jpeg'});
         }
     }
 
@@ -48,7 +50,7 @@ class Upload extends React.Component {
         e.preventDefault();
         this.setState({
             uploading: true
-        })
+        });
         const formData = new FormData();
         formData.append('track[title]', this.state.title);
         formData.append('track[audio]', this.state.audioFile);
@@ -74,11 +76,11 @@ class Upload extends React.Component {
             const override = css`
                                 display: block;
                                 margin: 0 auto;
-                                border-color: red;
+                                border-color: orange;
                             `;
             return (
                 
-            <div className='form-upload-container'>
+            <div className="loader-main">
                 <ClipLoader 
                     css={override}
                     sizeUnit={"px"}
@@ -89,11 +91,15 @@ class Upload extends React.Component {
             </div> 
             )
         }
+        let audioName = 'Click below to upload the audio file';
+        if (this.state.audioFile) {
+            audioName = this.state.audioFile.name;
+        }
         return (
             <div className="form-upload-container">
                 <h1>Upload an mp3 file</h1>
-                <h3 className="auth-errors">{this.state.status}</h3>
-                <h3 className="auth-errors">{this.state.errors}</h3>
+                <h4 >{this.state.status}</h4>
+                <h4 >{this.state.errors}</h4>
                 <form 
                     onSubmit={this.handleSubmit}
                     className="form-upload"
@@ -106,14 +112,17 @@ class Upload extends React.Component {
                             placeholder="Title"
                         /> 
                     </label>
-                    <label>Audio
+                    <p>{audioName}</p>
+                    <label className="file-upload-button" htmlFor="audio-input">Upload the audio file
                         <input 
+                            id="audio-input"
                             type="file"
                             onChange={this.handleAudio}
                         />
                     </label>
-                    <label>Photo
+                    <label className="file-upload-button" htmlFor="image-input">Upload an image (optional)
                         <input
+                            id="image-input"
                             type="file"
                             onChange={this.handlePhoto}
                         />
