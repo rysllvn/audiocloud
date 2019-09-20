@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { setModalStatus } from '../../actions/ui_actions';
-import Splash from './splash';
+import Splash2 from './splash2';
 import { getTracks } from '../../actions/track_actions';
 
 // { ui: { modal } }
@@ -20,4 +20,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Splash);
+)(Splash2);
