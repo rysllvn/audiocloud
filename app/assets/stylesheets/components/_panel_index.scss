@@ -11,6 +11,9 @@
     height: 169px;
     border: 1px solid #888;
     display: flex;
+    margin-bottom: 45px;
+    border: 1px solid #f2f2f2;
+    box-shadow: 0 2px 12px -5px rgba(0, 0, 0, 0.1);
 }
 
 .track-panel-title {
@@ -39,6 +42,6 @@
 }
 
 .panel-image {
-    height: 169px;
-    width: 169px;
+    height: 170px;
+    width: 170px;
 }

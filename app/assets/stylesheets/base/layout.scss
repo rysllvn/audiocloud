@@ -109,3 +109,21 @@ input[type="search"] {
 	right: 0px;
 	fill: white;
 }
+
+.title-user {
+	color: #333;
+	font-size: 14px;
+}
+
+.title-track {
+	color: #999;
+	font-size: 13px;
+}
+
+.title-user:hover {
+	color: #000;
+}
+
+.title-track:hover {
+	color: #333;
+}

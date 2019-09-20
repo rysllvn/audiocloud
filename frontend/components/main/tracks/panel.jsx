@@ -19,8 +19,8 @@ class Panel extends React.Component {
                 <div>{image}</div>
                 <ToggleButtonContainer trackId={this.props.track.id} type="panel-toggle"/>
                 <div className="track-panel-title">
-                    <Link to={`/users/${this.props.user.id}`}>{this.props.user.username}</Link>
-                    <Link to={`tracks/${this.props.track.id}`}>{this.props.track.title}</Link>  
+                    <Link className="title-user" to={`/users/${this.props.user.id}`}>{this.props.user.username}</Link>
+                    <Link className="title-user" to={`tracks/${this.props.track.id}`}>{this.props.track.title}</Link>  
                 </div>                         
             </li>            
         )

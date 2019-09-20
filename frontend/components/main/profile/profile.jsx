@@ -21,9 +21,18 @@ class Profile extends React.Component {
     }
 
     render() {
-        let profilePic = null;
+        let profilePic;
         if (this.props.user && this.props.user.imageUrl) {
-            profilePic = <div className="profile-pic"><img src={this.props.user.imageUrl}/></div>;
+            profilePic = <div className="profile-pic-container">
+                            <img className="profile-pic" src={this.props.user.imageUrl}/>
+                         </div>;
+        } else {
+            profilePic = <div className="profile-pic-container">
+                            <img 
+                                className="profile-pic"
+                                src={window.defaultUserImage}
+                            />
+                         </div>;
         }
         const uploadProfilePic = <button className="upload-pic-button">Upload</button>;
         if (!this.props.user) return null;
@@ -34,6 +43,7 @@ class Profile extends React.Component {
                     <h1 className="profile-name">{this.props.user.username}</h1>
                     {this.props.user.id === this.props.currentUserId && uploadProfilePic}
                 </div>
+                <h1>Tracks</h1>
                 <div className="profile-body">
                     <PanelIndex tracks={this.props.tracks} />
                 </div>

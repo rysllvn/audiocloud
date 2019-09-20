@@ -5,15 +5,31 @@
 
 .profile-header {
     display: flex;
-    background-color: grey;
     height: 260px;
+    border: solid 1px grey;
+    align-items: center;
 }
 
-.profile-pic {
+.profile-pic-container {
+    display: flex;
     width: 200px;
     height: 200px;
     border-radius: 50%;
     overflow: hidden;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.profile-name {
+    height: 200px;
+}
+
+.profile-pic {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 .profile-body {
@@ -24,7 +40,4 @@
 
 .upload-pic-button {
     height: 30px;
-    position: relative;
-    top: 220px;
-    right: 280px;
 }

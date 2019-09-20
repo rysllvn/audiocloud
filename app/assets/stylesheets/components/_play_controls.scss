@@ -1,4 +1,6 @@
 .play-controls {
+    display: flex;
+    justify-content: space-around; 
     border-top: 1px solid #cecece;
     position: fixed;
     left: 0;
@@ -9,6 +11,15 @@
     text-align: center;
     height: 48px;
     z-index: 50;
+}
+
+.play-controls-inner {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1240px;
+    margin: auto;
+    align-items: center;
+    z-index: 51;
 }
 
 .toggle {
@@ -42,3 +53,53 @@
 
 .tile-toggle{ display:none; }
 .track-tile:hover .tile-toggle{ display:block; }
+
+.main-toggle {
+    
+    z-index: 51;
+}
+
+.main-toggle-show {
+   
+    z-index: 51;
+}
+
+.play-controls-song-info {
+    display: flex;
+    flex-direction: row;
+    height: 46px;
+    align-items: center;
+}
+
+.play-controls-header {
+    display: flex;
+    flex-direction: column;
+    height: 46px;
+}
+
+.control-pic {
+    height: 32px;
+    width: 32px;
+    margin-right: 10px;
+}
+
+.play-controls-title {
+    font-size: 11px;
+    margin: 0;
+    color: #666;
+}
+
+.play-controls-title:hover {
+    color: #333;
+    cursor: pointer;
+}
+
+.play-controls-artist {
+    font-size: 11px;
+    margin: 0;
+    color: #999;
+}
+
+.play-controls-artist:hover {
+    color: #333;
+}

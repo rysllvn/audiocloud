@@ -22,8 +22,8 @@ class TrackTile extends React.Component {
                 </div>
 
                 <div className="track-tile-title">
-                    <Link to={`/users/${this.props.user.id}`}>{this.props.user.username}</Link>
-                    <Link to={`tracks/${this.props.track.id}`}>{this.props.track.title}</Link>  
+                    <Link className="title-user" to={`/users/${this.props.user.id}`}>{this.props.user.username}</Link>
+                    <Link className="title-track" to={`tracks/${this.props.track.id}`}>{this.props.track.title}</Link>  
                 </div>
             </li>            
         )

@@ -7,6 +7,7 @@ import PlayControls from './play_controls';
 const mapStateToProps = state => ({
     currentTrack: state.ui.currentTrack,
     tracks: state.entities.tracks,
+    users: state.entities.users,
     playing: state.ui.playing
 });
 

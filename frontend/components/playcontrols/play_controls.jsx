@@ -1,4 +1,6 @@
 import React from 'react';
+import ToggleButtonContainer from './toggle_button_container';
+import PlayControlsTitle from './play_controls_title';
 
 class PlayControls extends React.Component {
     constructor(props) {
@@ -18,10 +20,29 @@ class PlayControls extends React.Component {
 
     render () {
         let src;
-        if (this.props.currentTrack) src = this.props.tracks[this.props.currentTrack].audioUrl;
+        let trackId = this.props.currentTrack;
+        let artist;
+        let track;
+        if (trackId) {
+            track = this.props.tracks[trackId]
+            src = track.audioUrl;
+            artist = this.props.users[track.user_id];
+        }
+
         return (
             <section className="play-controls">
-                <audio id="audio" src={src} controls/>
+                <div className="play-controls-inner">
+                    <audio id="audio" src={src} controls/>
+                    {
+                        this.props.currentTrack 
+                        && 
+                        <PlayControlsTitle 
+                            artist={artist}
+                            track={this.props.tracks[trackId]}
+                        />
+                    }
+                </div>
+                
             </section>
         )
     }

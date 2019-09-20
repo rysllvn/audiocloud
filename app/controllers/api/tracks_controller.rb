@@ -5,7 +5,7 @@ class Api::TracksController < ApplicationController
             @tracks = user.tracks
             @users = [user]
         else
-            @tracks = Track.all
+            @tracks = Track.all.sample(15)
             @users = User.all
         end
     end

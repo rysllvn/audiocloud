@@ -16,6 +16,7 @@ import Stream from './stream';
 import UserNotFound from './profile/user_not_found';
 import NoMatch from './no_match';
 import RedirectLoginContainer from '../session/redirect_login_container';
+import TrackShow from './tracks/track_show';
 
 class Main extends React.Component {
     constructor(props) {
@@ -45,6 +46,7 @@ class Main extends React.Component {
                     <ProtectedRoute exact path="/upload" component={UploadContainer} />
                     <AuthRoute exact path="/login" component={RedirectLoginContainer} />
                     <Route exact path="/users/ohno" component={UserNotFound} />
+                    <Route path ="/users/:userId/:trackId" component={TrackShow} />
                     <Route path ="/users/:userId" component={ProfileContainer} />
                     <Route component={NoMatch} />
                 </Switch>

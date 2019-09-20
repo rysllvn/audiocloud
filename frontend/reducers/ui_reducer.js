@@ -6,7 +6,7 @@ import {
 
 const _defaultState = {
     modal: false,
-    currentTrack: 0,
+    currentTrack: null,
     playing: false
 }
 
