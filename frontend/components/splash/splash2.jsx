@@ -51,7 +51,7 @@ class Splash2 extends React.Component {
         });
         setTimeout(() => {
             this.next();
-        }, 3600);
+        }, 4900);
     }
 
     next() {
@@ -72,14 +72,14 @@ class Splash2 extends React.Component {
         });
         setTimeout(() => {
             this.prev();
-        }, 4100);
+        }, 4900);
         
     }
 
     componentDidMount() {
         setTimeout(() => {
             this.next();
-        }, 4100);
+        }, 4900);
         this.props.getTracks();
     }
 
