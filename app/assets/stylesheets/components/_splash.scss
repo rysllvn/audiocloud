@@ -41,8 +41,12 @@
 
 .splash-welcome {
     margin-top: 100px;
-    text-align: center;
     font-size: 30px;
+    color: #fff;
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    text-align: center;
 }
 
 .logo {
@@ -57,10 +61,6 @@
     font-size: 20px;
     font-weight: bold;
     align-content: center;
-}
-
-.splash-welcome {
-    color: #fff;
 }
 
 .splash-center {
