@@ -20,7 +20,6 @@ const Header = ({ currentUser, logout, setModalStatus, history }) => {
     <header className="header-container">
        <div className="header-inner">
          <Headernav loggedIn={!!currentUser}/>
-         <SearchBar />
          {headerRight}
        </div>
      </header>    

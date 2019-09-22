@@ -130,13 +130,6 @@ class Splash2 extends React.Component {
                     <h3 className="splash-welcome">Audiocloud, a Soundcloud clone</h3>
                 </div>
                 <div className="main">
-                    <div className="splash-center">
-                        <form className="splash-search-form">
-                            <input className="splash-search" type="search" placeholder="Search artists or tracks"/>
-                        </form>
-                        <p>or</p>
-                        <Link className="splash-upload" to="/upload">Upload</Link>
-                    </div>
                     <div className="splash-index">
                         <h2 className="splash-text">Hear what's trending for free in the Audiocloud community</h2>
                         <TrackTileIndex tracks={newSongs}/>
