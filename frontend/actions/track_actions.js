@@ -9,9 +9,9 @@ export const receiveTracks = data => ({
     data
 });
 
-export const receiveTrack = track => ({
+export const receiveTrack = trackId => ({
     type: RECEIVE_TRACK,
-    track
+    trackId
 });
 
 export const receiveTrackErrors = errors => ({

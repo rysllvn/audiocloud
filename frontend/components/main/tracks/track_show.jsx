@@ -1,11 +1,11 @@
 import React from 'react';
 
-const TrackShow = () => {
-    return (
-        <div>
-            <h1>Track show</h1>
-        </div>
-    )
+class TrackShow extends React.Component {
+    render() {
+        return (
+            <h1>Track Show Page</h1>
+        )
+    }
 }
 
 export default TrackShow;

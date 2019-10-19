@@ -12,8 +12,8 @@ const HeaderNav = ({loggedIn}) => {
         <nav className="header-left">
             {logo}
             <NavLink activeClassName="header-nav-selected" className="header-nav" to="/explore">Home</NavLink>
-            <NavLink activeClassName="header-nav-selected" className="header-nav" to="/stream">Stream</NavLink>
-            <NavLink activeClassName="header-nav-selected" className="header-nav" to="/library">Library</NavLink>
+            {/* <NavLink activeClassName="header-nav-selected" className="header-nav" to="/stream">Stream</NavLink>
+            <NavLink activeClassName="header-nav-selected" className="header-nav" to="/library">Library</NavLink> */}
         </nav>
     )
 }    
