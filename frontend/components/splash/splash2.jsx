@@ -19,6 +19,7 @@ class Splash2 extends React.Component {
 
         this.prev = this.prev.bind(this);
         this.next = this.next.bind(this);
+        this.timeouts = [];
     }
 
     modal() {
@@ -46,7 +47,6 @@ class Splash2 extends React.Component {
             let newCount = state.counter - 1
             carouselSlide.style.transition = "transform 0.4s ease-in-out";
             carouselSlide.style.transform = 'translateX(' + (-1240*newCount) + 'px)';
-            console.log(newCount);
             return {counter: newCount};
         });
         setTimeout(() => {
@@ -67,13 +67,11 @@ class Splash2 extends React.Component {
             let newCount = state.counter + 1
             carouselSlide.style.transition = "transform 0.4s ease-in-out";
             carouselSlide.style.transform = 'translateX(' + (-1240*newCount) + 'px)';
-            console.log(newCount);
             return {counter: newCount};
         });
         setTimeout(() => {
             this.prev();
         }, 4900);
-        
     }
 
     componentDidMount() {
