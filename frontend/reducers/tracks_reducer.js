@@ -1,6 +1,6 @@
 import { RECEIVE_TRACKS, RECEIVE_TRACK } from '../actions/track_actions';
 
-const usersReducer = (state = {}, action) => {
+const tracksReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);
   switch(action.type) {
@@ -14,4 +14,4 @@ const usersReducer = (state = {}, action) => {
   }
 };
 
-export default usersReducer;
+export default tracksReducer;

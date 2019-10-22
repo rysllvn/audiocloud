@@ -14,6 +14,7 @@ class Api::TracksController < ApplicationController
         @track = Track.find(params[:id])
         user_id = @track.user_id
         @user = User.find(user_id)
+        @comments = @track.comments
     end
 
     def create

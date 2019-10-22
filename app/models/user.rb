@@ -8,6 +8,7 @@ class User < ApplicationRecord
     before_validation :ensure_session_token
 
     has_many :tracks
+    has_many :comments
     has_one_attached :image
 
     def self.find_by_credentials(username, password)

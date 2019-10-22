@@ -3,6 +3,7 @@ class Track < ApplicationRecord
     validate :ensure_audio
 
     belongs_to :user
+    has_many :comments
     has_one_attached :audio
     has_one_attached :image
 
