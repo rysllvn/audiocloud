@@ -4,8 +4,12 @@ json.track do
     json.imageUrl url_for(@track.image) if @track.image.attached?
 end
 
-json.user do
-    json.extract! @user, :id, :username
+json.users do
+    @users.each do |user|
+        json.set! user.id do
+            json.extract! user, :id, :username
+        end
+    end
 end
 
 json.comments do

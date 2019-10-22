@@ -13,12 +13,17 @@ class Api::TracksController < ApplicationController
     def show
         @track = Track.find(params[:id])
         user_id = @track.user_id
-        @user = User.find(user_id)
         @comments = @track.comments
+        @users = []
+        @comments.each do |comment|
+            user = comment.user
+            @users << user unless @users.include?(user)
+        end
+        artist = User.find(user_id)
+        @users << artist unless @users.include?(artist)
     end
 
     def create
-      
         track = Track.new(track_params)
         track.user_id = current_user.id
 
