@@ -10,6 +10,18 @@ class Api::CommentsController < ApplicationController
         end
     end
 
+    def destroy
+        comment = Comment.find(params[:id])
+        track = comment.track
+        id = comment.id
+
+        if current_user.id == comment.user_id && comment.destroy
+            render json: id
+        else
+            render json: comment.errors.full_messages, status: 422
+        end
+    end
+
     private
 
     def comment_params

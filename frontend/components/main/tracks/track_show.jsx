@@ -9,23 +9,41 @@ class TrackShow extends React.Component {
         }
         this.updateBody = this.updateBody.bind(this);
         this.handleComment = this.handleComment.bind(this);
+        this.deleteComment = this.deleteComment.bind(this);
     }
     componentDidMount() {
         this.props.getTrack(this.props.match.params.trackId);
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.comments.length !== prevProps.comments.length) {
+            this.props.getTrack(this.props.match.params.trackId);
+        }
     }
 
     componentWillUnmount() {
         this.props.clearComments();
     }
 
+    deleteComment(e, comment) {
+        e.preventDefault()
+        this.props.deleteComment(comment.id);
+    }
+
     handleComment(e) {
         e.preventDefault();
-        const comment = {
-            track_id: this.props.track.id,
-            body: this.state.body,
-        };
-        this.props.createComment({comment})
-            .then(() => this.setState({ body: ''}));
+
+        if (this.props.currentUserId) {
+            const comment = {
+                track_id: this.props.track.id,
+                body: this.state.body,
+            };
+            this.props.createComment({comment})
+                .then(() => this.setState({ body: ''}));
+        } else {
+            this.props.setModalStatus('signIn');
+        }
+        
     }
 
     updateBody(e) {
@@ -48,8 +66,10 @@ class TrackShow extends React.Component {
                 <ul>
                     {Object.values(this.props.comments).map(comment => {
                         return (
-                            <li>
-                                {comment.body}
+                            <li key={comment.id}>
+                                <p>{comment.body}</p>
+                                <p>{this.props.users[comment.user_id].username}</p>
+                                {this.props.currentUserId === comment.user_id && <button onClick={(e) => this.deleteComment(e,comment)}>Delete</button>}
                             </li>
                         )
                     })}
@@ -62,6 +82,7 @@ class TrackShow extends React.Component {
                             type="text"
                             onChange={this.updateBody}
                             placeholder="Leave a comment"
+                            value={this.state.body}
                         />
                     </label>
                     <input type="submit" value="Comment"/>

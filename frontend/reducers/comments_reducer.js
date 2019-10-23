@@ -1,5 +1,5 @@
 import { RECEIVE_TRACK } from '../actions/track_actions';
-import { CLEAR_COMMENTS, RECEIVE_COMMENT } from '../actions/comment_actions';
+import { CLEAR_COMMENTS, RECEIVE_COMMENT, DELETE_COMMENT } from '../actions/comment_actions';
 
 const commentsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -12,6 +12,9 @@ const commentsReducer = (state = {}, action) => {
             return newState;
         case CLEAR_COMMENTS:
             return {};
+        case DELETE_COMMENT:
+            delete newState[action.id];
+            return newState;
         default:
             return state;
     }

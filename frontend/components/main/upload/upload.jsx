@@ -36,7 +36,7 @@ class Upload extends React.Component {
             this.setState({photoFile: e.currentTarget.files[0]});
         } else {
             e.currentTarget.value = null;
-            this.setState({errors: 'must upload a png or jpeg'});
+            this.setState({errors: 'must upload a jpeg'});
         }
     }
 
