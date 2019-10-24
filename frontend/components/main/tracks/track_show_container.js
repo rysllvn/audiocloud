@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 import TrackShow from './track_show';
 
-import { getTrack } from '../../../actions/track_actions';
+import { getTrack, deleteTrack } from '../../../actions/track_actions';
 import { clearComments, createComment, deleteComment } from '../../../actions/comment_actions';
 import { getUser } from '../../../actions/user_actions';
 import { setModalStatus } from '../../../actions/ui_actions';
@@ -23,6 +23,7 @@ const mdp = dispatch => ({
     createComment: comment => dispatch(createComment(comment)),
     deleteComment: id => dispatch(deleteComment(id)),
     setModalStatus: status => dispatch(setModalStatus(status)),
+    deleteTrack: id => dispatch(deleteTrack(id)),
 });
 
 export default withRouter(connect(msp, mdp)(TrackShow));

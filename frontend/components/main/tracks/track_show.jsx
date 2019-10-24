@@ -10,14 +10,21 @@ class TrackShow extends React.Component {
         this.updateBody = this.updateBody.bind(this);
         this.handleComment = this.handleComment.bind(this);
         this.deleteComment = this.deleteComment.bind(this);
+        this.deleteTrack = this.deleteTrack.bind(this);
     }
     componentDidMount() {
-        this.props.getTrack(this.props.match.params.trackId);
+        this.props.getTrack(this.props.match.params.trackId)
+            .fail(() => {
+                this.props.history.push('/ohno');
+            });
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props.comments.length !== prevProps.comments.length) {
-            this.props.getTrack(this.props.match.params.trackId);
+        if (this.props.match.params.trackId !== prevProps.match.params.trackId) {
+            this.props.getTrack(this.props.match.params.trackId)
+                .fail(() => {
+                    this.props.history.push('/ohno');
+                });
         }
     }
 
@@ -30,9 +37,14 @@ class TrackShow extends React.Component {
         this.props.deleteComment(comment.id);
     }
 
+    deleteTrack(e) {
+        e.preventDefault();
+        this.props.deleteTrack(this.props.match.params.trackId);
+        this.props.history.push({pathname: `/users/${this.props.currentUserId}`});
+    }
+
     handleComment(e) {
         e.preventDefault();
-
         if (this.props.currentUserId) {
             const comment = {
                 track_id: this.props.track.id,
@@ -43,7 +55,6 @@ class TrackShow extends React.Component {
         } else {
             this.props.setModalStatus('signIn');
         }
-        
     }
 
     updateBody(e) {
@@ -63,6 +74,7 @@ class TrackShow extends React.Component {
             <div>
                 <h1>{this.props.track.title}</h1>
                 <PanelContainer track={this.props.track} />
+                {this.props.currentUserId === this.props.track.user_id && <button onClick={this.deleteTrack}>Delete Track</button>}
                 <ul>
                     {Object.values(this.props.comments).map(comment => {
                         return (

@@ -26,9 +26,10 @@ class Api::TracksController < ApplicationController
     def create
         track = Track.new(track_params)
         track.user_id = current_user.id
+        data = {track: track}
 
         if track.save
-            render json: {message: "yay track added"}
+            render json: data
         else
             render json: track.errors.full_messages, status: 422
         end
@@ -38,6 +39,14 @@ class Api::TracksController < ApplicationController
     end
 
     def destroy
+        track = Track.find(params[:id])
+        id = track.id
+        
+        if current_user.id == track.user_id && track.destroy
+            render json: id
+        else
+            render json: track.errors.full_messages, status: 422
+        end
     end
 
     private

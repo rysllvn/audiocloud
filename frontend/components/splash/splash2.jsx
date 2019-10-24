@@ -4,6 +4,7 @@ import SignupFormContainer from '../session/create_account_form_container';
 import { Link } from 'react-router-dom';
 import TrackTileIndex from '../main/tracks/track_tile_index';
 import { receiveCurrentUser } from '../../actions/session_actions';
+import { timingSafeEqual } from 'crypto';
 
 const filled = <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48"><circle cx="12" cy="12" r="12"/></svg>;
 
@@ -19,7 +20,8 @@ class Splash2 extends React.Component {
 
         this.prev = this.prev.bind(this);
         this.next = this.next.bind(this);
-        this.timeouts = [];
+        this.prevTimeout = null;
+        this.nextTimeout = null;
     }
 
     modal() {
@@ -49,9 +51,10 @@ class Splash2 extends React.Component {
             carouselSlide.style.transform = 'translateX(' + (-1240*newCount) + 'px)';
             return {counter: newCount};
         });
-        setTimeout(() => {
+        this.prevTimeout = setTimeout(() => {
             this.next();
         }, 4900);
+        clearTimeout(this.nextTimeout);
     }
 
     next() {
@@ -69,9 +72,10 @@ class Splash2 extends React.Component {
             carouselSlide.style.transform = 'translateX(' + (-1240*newCount) + 'px)';
             return {counter: newCount};
         });
-        setTimeout(() => {
+        this.nextTimeout = setTimeout(() => {
             this.prev();
         }, 4900);
+        clearTimeout(this.prevTimeout);
     }
 
     componentDidMount() {
@@ -79,6 +83,11 @@ class Splash2 extends React.Component {
             this.next();
         }, 4900);
         this.props.getTracks();
+    }
+
+    componentWillUnmount() {
+        clearTimeout(this.prevTimeout);
+        clearTimeout(this.nextTimeout);
     }
 
     render() {

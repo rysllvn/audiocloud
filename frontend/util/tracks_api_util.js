@@ -13,7 +13,7 @@ export const createTrack = track => (
         contentType: false,
         processData: false
     })
-)
+);
 
 export const getTracks = () => (
     $.ajax({
@@ -27,4 +27,11 @@ export const getTrack = id => (
         method: 'GET',
         url: `api/tracks/${id}`
     })
-)
+);
+
+export const deleteTrack = id => (
+    $.ajax({
+        method: 'DELETE',
+        url: `api/tracks/${id}`,
+    })
+);

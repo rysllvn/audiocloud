@@ -3,6 +3,7 @@ import * as TrackUtil from '../util/tracks_api_util';
 export const RECEIVE_TRACKS = 'RECEIVE_TRACKS';
 export const RECEIVE_TRACK = 'RECEIVE_TRACK';
 export const RECEIVE_TRACK_ERRORS = 'RECEIVE_TRACK_ERRORS';
+export const REMOVE_TRACK = 'REMOVE_TRACK';
 
 export const receiveTracks = data => ({
     type: RECEIVE_TRACKS,
@@ -18,6 +19,11 @@ export const receiveTrackErrors = errors => ({
     type: RECEIVE_TRACK_ERRORS,
     errors
 });
+
+export const removeTrack = id => ({
+    type: REMOVE_TRACK,
+    id
+})
 
 export const getTrack = id => dispatch => (
     TrackUtil.getTrack(id)
@@ -39,5 +45,12 @@ export const createTrack = track => dispatch => (
         .then(
             track => dispatch(receiveTrack(track)),
             errors => dispatch(receiveTrackErrors(errors.responseJSON))
+        )
+);
+
+export const deleteTrack = id => dispatch => (
+    TrackUtil.deleteTrack(id)
+        .then(
+            id => dispatch(removeTrack(id)),
         )
 );
