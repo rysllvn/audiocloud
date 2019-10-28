@@ -1,5 +1,5 @@
 import React from 'react';
-import ToggleButtonContainer from './toggle_button_container';
+import ToggleMainContainer from './toggle_main_container';
 import PlayControlsTitle from './play_controls_title';
 
 class PlayControls extends React.Component {
@@ -32,7 +32,8 @@ class PlayControls extends React.Component {
         return (
             <section className="play-controls">
                 <div className="play-controls-inner">
-                    <audio id="audio" src={src} controls/>
+                    <audio id="audio" src={src}/>
+                    <ToggleMainContainer />
                     {
                         this.props.currentTrack 
                         && 
@@ -42,7 +43,6 @@ class PlayControls extends React.Component {
                         />
                     }
                 </div>
-                
             </section>
         )
     }

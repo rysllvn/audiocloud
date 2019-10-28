@@ -81,6 +81,7 @@ class TrackShow extends React.Component {
                             <li key={comment.id}>
                                 <p>{comment.body}</p>
                                 <p>{this.props.users[comment.user_id].username}</p>
+                                <p>{comment.created_at}</p>
                                 {this.props.currentUserId === comment.user_id && <button onClick={(e) => this.deleteComment(e,comment)}>Delete</button>}
                             </li>
                         )
