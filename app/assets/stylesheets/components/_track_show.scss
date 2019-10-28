@@ -1,22 +1,48 @@
 .comment-box {
-    display: flexbox;
     height: 40px;
     background: #f2f2f2;
-    justify-content: center;
     padding: 5px;
     border: 1px solid #e5e5e5;
 }
+
+.comment-box:focus-within {
+    background: #e5e5e5;
+    border-color: #ccc;
+}
+
 .comment-text {
     font-size: 14px;
     height: 27px;
     width: 100%;
 }
 
-.comment-header {
+.comment-li {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+}
 
+.comment-header {
+    display: flex;
+    justify-content: space-between;
 }
 
 .comment-content {
     color: #333;
     font-size: 12px;
+    display: flex;
+    justify-content: space-between;
 }
+
+.comment-delete {
+    background-color: white;
+    color: #666
+}
+
+.comment-delete:hover {
+    color: #333;
+}
+

@@ -1,5 +1,5 @@
 .header-container {
-    overflow: hidden;
+    overflow: visible;
     background-color: $background-nav;
     position: fixed;
     top: 0;
@@ -120,7 +120,44 @@
 }
 
 .nav-dropdown {
-    width: 25px;
+    display: flex;
+    height: 46px;
+    position: relative;
+    align-items: center;
+}
+
+.selected-dropdown {
+    display: flex;
+    height: 46px;
+    position: relative;
+    background: #111;
+    align-items: center;
+}
+
+.nav-dropdown-button {    
+    box-sizing: border-box;
+    width: 46px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.nav-dropdown-content {
+    display: flex;
+    flex-direction: column;
+    background: #111;
+    position: absolute;
+    right: 0px;
+    top: 46px;
+    width: 60px;
+}
+
+.dropdown-item {
+    padding: 10px;
+    font-size: 10px;
+}
+
+.dropdown-item:hover {
+    background-color: #333;
 }
 
 .nav-upload {
@@ -156,9 +193,3 @@
     font-size: 18px;
 }
 
-.nav-dropdown {    
-    box-sizing: border-box;
-    width: 46px;
-    text-align: center;
-    font-size: 20px;
-}

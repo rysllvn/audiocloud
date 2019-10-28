@@ -93,9 +93,15 @@ class TrackShow extends React.Component {
                     </form>
                 </div>
                 <ul>
-                    {Object.values(this.props.comments).map(comment => {
+                    {Object.values(this.props.comments).sort((a,b) => {
+                        if (a.id > b.id) {
+                            return -1;
+                        } else {
+                            return 1;
+                        }
+                    }).map(comment => {
                         return (
-                            <li className="content-li" key={comment.id}>
+                            <li className="comment-li" key={comment.id}>
                                 <div className="comment-header">
                                     <Link 
                                         className="play-controls-artist"
@@ -105,8 +111,11 @@ class TrackShow extends React.Component {
                                 </div>
                                 <div className="comment-content">
                                     <p>{comment.body}</p>
+                                    {this.props.currentUserId === comment.user_id && 
+                                    <button
+                                        className="comment-delete"
+                                        onClick={(e) => this.deleteComment(e,comment)}>Delete</button>}
                                 </div>
-                                {this.props.currentUserId === comment.user_id && <button onClick={(e) => this.deleteComment(e,comment)}>Delete</button>}
                             </li>
                         )
                     })}

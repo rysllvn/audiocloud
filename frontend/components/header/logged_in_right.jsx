@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import Dropdown from './dropdown';
 
 const handleLogout = (history, logout) => {
     history.push({
@@ -24,11 +25,7 @@ const LoggedInRight = ({history, logout, currentUser}) => (
         <a 
             className="nav-messages"
         ><i className="fas fa-envelope"></i></a>
-        <a 
-            className="nav-dropdown"
-            onClick={() => handleLogout(history, logout)}
-        ><i 
-            className="fas fa-ellipsis-h"></i></a>
+        <Dropdown history={history} logout={logout}/>        
     </div>
 );
 
