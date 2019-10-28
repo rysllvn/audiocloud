@@ -1,5 +1,6 @@
 import React from 'react';
 import PanelContainer from './panel_container';
+import { Link } from 'react-router-dom';
 
 class TrackShow extends React.Component {
     constructor(props) {
@@ -75,31 +76,41 @@ class TrackShow extends React.Component {
                 <h1>{this.props.track.title}</h1>
                 <PanelContainer track={this.props.track} />
                 {this.props.currentUserId === this.props.track.user_id && <button onClick={this.deleteTrack}>Delete Track</button>}
+                <div className="comment-box">
+                    <form
+                        onSubmit={this.handleComment}
+                    >
+                        <label>
+                            <input
+                                type="text"
+                                onChange={this.updateBody}
+                                placeholder="Write a comment"
+                                className="comment-text"
+                                value={this.state.body}
+                            />
+                        </label>
+                        <input className="hidden" type="submit" value="Comment"/>
+                    </form>
+                </div>
                 <ul>
                     {Object.values(this.props.comments).map(comment => {
                         return (
-                            <li key={comment.id}>
-                                <p>{comment.body}</p>
-                                <p>{this.props.users[comment.user_id].username}</p>
-                                <p>{comment.created_at}</p>
+                            <li className="content-li" key={comment.id}>
+                                <div className="comment-header">
+                                    <Link 
+                                        className="play-controls-artist"
+                                        to={`/users/${comment.user_id}`}
+                                    >{this.props.users[comment.user_id].username}</Link>
+                                    <p>{comment.created_at}</p>
+                                </div>
+                                <div className="comment-content">
+                                    <p>{comment.body}</p>
+                                </div>
                                 {this.props.currentUserId === comment.user_id && <button onClick={(e) => this.deleteComment(e,comment)}>Delete</button>}
                             </li>
                         )
                     })}
                 </ul>
-                <form
-                    onSubmit={this.handleComment}
-                >
-                    <label>
-                        <input
-                            type="text"
-                            onChange={this.updateBody}
-                            placeholder="Leave a comment"
-                            value={this.state.body}
-                        />
-                    </label>
-                    <input type="submit" value="Comment"/>
-                </form>
             </div>
         )
     }

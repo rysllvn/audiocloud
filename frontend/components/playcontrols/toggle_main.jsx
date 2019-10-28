@@ -1,7 +1,7 @@
 import React from 'react';
 
 const playButton = <svg 
-                        className="toggle-icon-play"
+                        className="main-toggle-icon-play"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24" 
                         height="24" 
@@ -11,7 +11,7 @@ const playButton = <svg
                     </svg>;
 
 const pauseButton = <svg 
-                        className="toggle-icon-pause"
+                        className="main-toggle-icon-pause"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24" height="24" 
                         viewBox="0 0 24 24"

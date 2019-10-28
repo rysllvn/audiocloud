@@ -22,6 +22,10 @@
     z-index: 51;
 }
 
+.main_toggle {
+    color: black;
+}
+
 .toggle {
     position: fixed;
     bottom: 5px;
@@ -55,7 +59,6 @@
 .track-tile:hover .tile-toggle{ display:block; }
 
 .main-toggle {
-    
     z-index: 51;
 }
 
