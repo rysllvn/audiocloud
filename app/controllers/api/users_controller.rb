@@ -13,10 +13,20 @@ class Api::UsersController < ApplicationController
           render json: @user.errors.full_messages, status: 422
         end
     end
+
+    def update
+      debugger
+      @user = User.find(params[:id])
+      if @user.id == current_user.id && @user.update(user_params)
+        render json: 'photo updated'
+      else
+        render json: @user.errors.full_messages, status: 422
+      end
+    end
     
     private
     
     def user_params
-        params.require(:user).permit(:username, :password)
+        params.require(:user).permit(:username, :password, :image)
     end
 end

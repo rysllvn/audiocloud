@@ -1,5 +1,6 @@
 import React from 'react';
 import PanelIndex from '../tracks/panel_index';
+import ProfilePicForm from './profile_pic_form';
 
 class Profile extends React.Component {
     fetchUserData(userId) {
@@ -41,7 +42,7 @@ class Profile extends React.Component {
                 <div className="profile-header">
                     {profilePic}
                     <h1 className="profile-name">{this.props.user.username}</h1>
-                    {this.props.user.id === this.props.currentUserId && uploadProfilePic}
+                    {this.props.user.id === this.props.currentUserId && <ProfilePicForm id={this.props.currentUserId} updateUser={this.props.updateUser}/>}
                 </div>
                 <h1>Tracks</h1>
                 <div className="profile-body">

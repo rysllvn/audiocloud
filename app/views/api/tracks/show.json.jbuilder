@@ -8,6 +8,7 @@ json.users do
     @users.each do |user|
         json.set! user.id do
             json.extract! user, :id, :username
+            json.imageUrl url_for(user.image) if user.image.attached?
         end
     end
 end

@@ -12,3 +12,7 @@ export const getUser = userId => dispatch => (
             user => dispatch(receiveUser(user))
         )
 );
+
+export const updateUser = data => dispatch => (
+    UserUtil.updateUser(data)
+)
