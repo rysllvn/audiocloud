@@ -15,7 +15,6 @@ class Api::UsersController < ApplicationController
     end
 
     def update
-      debugger
       @user = User.find(params[:id])
       if @user.id == current_user.id && @user.update(user_params)
         render json: 'photo updated'

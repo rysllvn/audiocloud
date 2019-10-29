@@ -120,7 +120,6 @@ class SessionForm extends React.Component {
               <input id="submit" className="session-submit" type="submit" value={this.props.formType} />
             </div>
           </form>
-          <Link className="link-session-form" to="/help">Need help?</Link>
           <button 
             className="button-switch-form"
             onClick={() => this.setModalStatus(this.otherForm)}

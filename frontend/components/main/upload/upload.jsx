@@ -110,6 +110,7 @@ class Upload extends React.Component {
                             type="text"
                             onChange={this.updateTitle}
                             placeholder="Title"
+                            className="upload-title"
                         /> 
                     </label>
                     <p>{audioName}</p>
