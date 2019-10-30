@@ -1,22 +1,14 @@
 import React from 'react';
-import ToggleMainContainer from './toggle_main_container';
+import ToggleMainContainer from './control_buttons_container';
 import PlayControlsTitle from './play_controls_title';
 import ProgressBar from './progress_bar';
-
-const formatTime = time => {
-    const minutes = Math.floor(time / 60);
-    const seconds = Math.floor(time % 60);
-    if (seconds < 10) {
-        return minutes + ' : 0' + seconds;
-    } else {
-        return minutes + ' : ' + seconds;
-    }
-}
 
 class PlayControls extends React.Component {
     constructor(props) {
         super(props);
         this.audio = null;
+        this.currentTime = 0;
+        this.duration = 0;
         this.state = {
             currentTime: null,
             max: null,
@@ -28,7 +20,6 @@ class PlayControls extends React.Component {
         this.audio = audio
         this.audio.addEventListener('timeupdate', () => {
             this.setState({currentTime: this.audio.currentTime, max: this.audio.duration});
-            // console.log(this.audio.currentTime, this.audio.duration);
         });
     }
 
@@ -44,33 +35,24 @@ class PlayControls extends React.Component {
     }
 
     render () {
-        let src;
-        let trackId = this.props.currentTrack;
-        let artist;
-        let track;
-        if (trackId) {
-            track = this.props.tracks[trackId]
+        let src, artist, track;
+        
+        if (this.props.currentTrack) {
+            track = this.props.tracks[this.props.currentTrack];
             src = track.audioUrl;
             artist = this.props.users[track.user_id];
         }
 
+        const controls = <div className="play-controls-inner">                            
+                            <ToggleMainContainer />
+                            <ProgressBar curTime={this.state.currentTime} max={this.state.max} />
+                            <PlayControlsTitle artist={artist} track={track}/>
+                        </div>
+
         return (
             <section className="play-controls">
-                <div className="play-controls-inner">
-                    <audio id="audio" src={src}/>
-                    <ToggleMainContainer />
-                    <p>{formatTime(this.state.currentTime)}</p>
-                    <ProgressBar curTime={this.state.currentTime} max={this.state.max} />
-                    <p>{formatTime(this.state.max)}</p>
-                    {
-                        this.props.currentTrack 
-                        && 
-                        <PlayControlsTitle 
-                            artist={artist}
-                            track={this.props.tracks[trackId]}
-                        />
-                    }
-                </div>
+                <audio id="audio" src={src}/>
+                {src && controls}
             </section>
         )
     }

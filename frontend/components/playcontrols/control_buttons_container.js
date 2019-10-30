@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import { togglePlay } from '../../actions/ui_actions';
-import ToggleMain from './toggle_main';
+import ControlButtons from './control_buttons';
 
 const mapStateToProps = state => ({
     currentTrack: state.ui.currentTrack,
@@ -12,4 +12,4 @@ const mapDispatchToProps = dispatch => ({
     togglePlay: () => dispatch(togglePlay()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ToggleMain);
+export default connect(mapStateToProps, mapDispatchToProps)(ControlButtons);
