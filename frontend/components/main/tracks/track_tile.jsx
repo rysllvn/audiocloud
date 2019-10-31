@@ -5,6 +5,11 @@ import ToggleButtonContainer from '../../playcontrols/toggle_button_container';
 class TrackTile extends React.Component {
     constructor(props) {
         super(props);
+        this.handleQueue = this.handleQueue.bind(this);
+    }
+
+    handleQueue() {
+        this.props.queueSong(this.props.track.id)
     }
 
     render() {

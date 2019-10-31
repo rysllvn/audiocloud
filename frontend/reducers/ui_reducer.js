@@ -1,13 +1,15 @@
 import {
     SET_MODAL_STATUS,
     SET_CURRENT_TRACK,
-    TOGGLE_PLAY
+    TOGGLE_PLAY,
+    QUEUE_SONG
 } from '../actions/ui_actions';
 
 const _defaultState = {
     modal: false,
     currentTrack: null,
-    playing: false
+    playing: false,
+    queue: []
 }
 
 const uiReducer = (state = _defaultState, action) => {
@@ -24,6 +26,9 @@ const uiReducer = (state = _defaultState, action) => {
             return Object.assign(oldState, changes);
         case TOGGLE_PLAY:
             return Object.assign(oldState, {playing: !oldState.playing});
+        case QUEUE_SONG:
+            oldState.queue.push(action.trackId);
+            return oldState;
         default:
             return state;
     }

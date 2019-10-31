@@ -18,3 +18,44 @@
     flex-direction: column;
 }
 
+.tile-toggle {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    color: white;
+}
+
+.tile-toggle-show {
+    display: flex;
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.tile-toggle{ 
+    // display:none; 
+}
+.track-tile:hover .tile-toggle{ display:block; }
+
+.toggle-icon-play {
+	
+	// top: 4px;
+	// left: 2px;
+	fill: white;
+}
+
+.toggle-icon-pause {
+	// position: relative;
+	// top: 4px;
+	// right: 0px;
+	fill: white;
+}

@@ -10,8 +10,8 @@ class PlayControls extends React.Component {
         this.currentTime = 0;
         this.duration = 0;
         this.state = {
-            currentTime: null,
-            max: null,
+            currentTime: 0,
+            max: 0,
         };
     }
 
@@ -34,7 +34,7 @@ class PlayControls extends React.Component {
         }
     }
 
-    render () {
+    render() {
         let src, artist, track;
         
         if (this.props.currentTrack) {
