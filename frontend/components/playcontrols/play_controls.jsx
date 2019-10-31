@@ -7,8 +7,6 @@ class PlayControls extends React.Component {
     constructor(props) {
         super(props);
         this.audio = null;
-        this.currentTime = 0;
-        this.duration = 0;
         this.state = {
             currentTime: 0,
             max: 0,

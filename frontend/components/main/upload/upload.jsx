@@ -114,14 +114,16 @@ class Upload extends React.Component {
                         /> 
                     </label>
                     <p>{audioName}</p>
-                    <label className="file-upload-button" htmlFor="audio-input">Upload the audio file
+                    <label className="file-upload-button" htmlFor="audio-input">
+                        <p>Upload the audio file</p>
                         <input 
                             id="audio-input"
                             type="file"
                             onChange={this.handleAudio}
                         />
                     </label>
-                    <label className="file-upload-button" htmlFor="image-input">Upload an image (optional)
+                    <label className="file-upload-button" htmlFor="image-input">
+                        <p>Upload an image (optional)</p>
                         <input
                             id="image-input"
                             type="file"

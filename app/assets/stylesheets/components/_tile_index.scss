@@ -42,20 +42,19 @@
 }
 
 .tile-toggle{ 
-    // display:none; 
+    display:none; 
 }
-.track-tile:hover .tile-toggle{ display:block; }
+.track-tile:hover .tile-toggle{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .toggle-icon-play {
-	
-	// top: 4px;
-	// left: 2px;
-	fill: white;
+    fill: white;
+    margin-left: 5px;
 }
 
 .toggle-icon-pause {
-	// position: relative;
-	// top: 4px;
-	// right: 0px;
 	fill: white;
 }
