@@ -32,7 +32,8 @@ class Dropdown extends React.Component {
                 ><i className="fas fa-ellipsis-h"></i></a>
                 { this.state.open ? (
                         <div className="nav-dropdown-content">
-                            <a className="dropdown-item">About</a>
+                            <a className="dropdown-item"
+                                onClick={() => this.props.history.push({pathname: '/about'})}>About</a>
                             <a
                                 className="dropdown-item"
                                 onClick={() => {

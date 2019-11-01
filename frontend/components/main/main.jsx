@@ -17,6 +17,7 @@ import UserNotFound from './profile/user_not_found';
 import NoMatch from './no_match';
 import RedirectLoginContainer from '../session/redirect_login_container';
 import TrackShowContainer from './tracks/track_show_container';
+import About from './about';
 
 class Main extends React.Component {
     constructor(props) {
@@ -48,6 +49,7 @@ class Main extends React.Component {
                     <Route exact path="/users/ohno" component={UserNotFound} />
                     <Route path ="/tracks/:trackId" component={TrackShowContainer} />
                     <Route path ="/users/:userId" component={ProfileContainer} />
+                    <Route path ="/about" component={About}/>
                     <Route component={NoMatch} />
                 </Switch>
             </div>

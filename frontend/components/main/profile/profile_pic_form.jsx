@@ -7,6 +7,7 @@ class ProfilePicForm extends React.Component {
             photoFile: null,
             errors: null,
             status: 'Upload a photo here',
+            uploading: false,
         };
         this.handlePhoto = this.handlePhoto.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,34 +27,43 @@ class ProfilePicForm extends React.Component {
         e.preventDefault();
         const formData = new FormData();
         formData.append('user[image]', this.state.photoFile);
+        this.setState({uploading: true})
+        
         this.props.updateUser({
             userId: this.props.id,
             updates: formData
         })
-            .then(() => {
-                this.setState({status: 'photo uploaded'})
-            });
+        .then(() => {
+            this.setState({status: 'photo uploaded', uploading: false})
+        });
     }
 
     render () {
-        return (
-            <div>
-                <h4>{this.state.status}</h4>
-                <h4>{this.state.errors}</h4>
-                <form
-                    onSubmit={this.handleSubmit}
-                >
-                    <label htmlFor="image-input">Upload
-                        <input
-                            id="image-input"
-                            type="file"
-                            onChange={this.handlePhoto}
-                        />
-                    </label>
-                    <input type="submit" />
-                </form>        
-            </div>
-        )
+        if (this.state.uploading) {
+            return (
+                <div>Uploading yo</div>
+            )
+        } else {
+            return (
+                <div>
+                    <h4>{this.state.status}</h4>
+                    <h4>{this.state.errors}</h4>
+                    <form
+                        onSubmit={this.handleSubmit}
+                    >
+                        <label htmlFor="image-input">Upload
+                            <input
+                                id="image-input"
+                                type="file"
+                                onChange={this.handlePhoto}
+                            />
+                        </label>
+                        <input type="submit" />
+                    </form>        
+                </div>
+            )
+        }
+        
            
     }
 }
