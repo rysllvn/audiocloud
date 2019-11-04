@@ -1,27 +1,46 @@
-# audiocloud
-soundcloud clone
+# Audiocloud
+> Clone of Audiocloud to sharpen React, Redux, and Rails skills. [Live!](https://ryan-audiocloud.herokuapp.com/#/)
 
-# README
+## Table of contents
+* [General info](#general-info)
+* [Screenshots](#screenshots)
+* [Technologies](#technologies)
+* [Features](#features)
+* [Status](#status)
+* [Inspiration](#inspiration)
+* [Contact](#contact)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## General info
+A clone of Soundcloud
 
-Things you may want to cover:
+## Screenshots
+![]()
 
-* Ruby version
+## Technologies
+* React.js
+* Redux.js
+* Ruby on Rails
+* PostgreSQL
+* SASS
 
-* System dependencies
+## Code Examples
+Custom Media Player:
+```
 
-* Configuration
+```
 
-* Database creation
+## Features
+List of features ready and TODOs for future development
+* 
+* 
+To-do list:
+* 
 
-* Database initialization
+## Status
+Project is: _in progress_ 
 
-* How to run the test suite
+## Inpsiration
+Soundcloud
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Contact
+Created by [Ryan Sullivan](https://www.linkedin.com/in/ryan-sullivan-32080223/) - feel free to contact me!

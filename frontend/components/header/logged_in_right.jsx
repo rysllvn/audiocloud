@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import Dropdown from './dropdown';
+import MessagesDropdown from './messages_dropdown';
+import AlertsDropdown from './alerts_dropdown';
 
 const handleLogout = (history, logout) => {
     history.push({
@@ -19,12 +21,8 @@ const LoggedInRight = ({history, logout, currentUser}) => (
             to={`/users/${currentUser.id}`}
             className="nav-upload"
         ><div>{currentUser.username}</div></Link>
-        <a 
-            className="nav-alerts"
-        ><i className="fas fa-bell"></i></a>
-        <a 
-            className="nav-messages"
-        ><i className="fas fa-envelope"></i></a>
+        <AlertsDropdown />
+        <MessagesDropdown />
         <Dropdown history={history} logout={logout}/>        
     </div>
 );
