@@ -1,0 +1,28 @@
+.search {
+    width: 100%;
+    margin-right: 10px;
+    .search-preview-list {
+        position: absolute;
+        top: 46px;
+        background-color: #333;
+        width: auto;
+        .search-preview-item {
+            background-color: #111;
+            padding: 10px;
+            font-size: 14px;
+            color: #ccc
+        }
+        .search-preview-item:hover {
+            background-color: #333;
+        }
+    }
+}
+
+.search-input {
+    height: 28px;
+    width: 100%;
+    display: block;
+    font-size: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
+}

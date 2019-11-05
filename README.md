@@ -11,7 +11,7 @@
 * [Contact](#contact)
 
 ## General info
-A clone of Soundcloud
+A clone of Soundcloud with full CRUD capabilities for tracks.
 
 ## Screenshots
 ![]()

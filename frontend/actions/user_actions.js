@@ -15,4 +15,4 @@ export const getUser = userId => dispatch => (
 
 export const updateUser = data => dispatch => (
     UserUtil.updateUser(data)
-)
+);

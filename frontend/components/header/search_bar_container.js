@@ -1,0 +1,15 @@
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+
+import { searchBasic } from '../../actions/search_actions';
+import SearchBar from './search_bar';
+
+const msp = (state, ownProps) => ({
+
+});
+
+const mdp = dispatch => ({
+    search: query => dispatch(searchBasic(query))
+});
+
+export default connect(msp, mdp)(SearchBar);
