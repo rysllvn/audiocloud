@@ -20,6 +20,12 @@ class SearchBar extends React.Component {
         this.setState({results: {}, searchTerm: ''});
     }
 
+    componentDidUpdate(prevProps) {
+        if (this.props.match !== prevProps.match) {
+            this.setState({results: {}, searchTerm: ''});
+        }
+    }
+
     handleInput(e) {
         e.preventDefault();
         this.setState({searchTerm: e.target.value}, () => {
