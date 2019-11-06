@@ -1,9 +1,9 @@
 import * as SearchUtil from '../util/search_api_util';
 export const RECEIVE_SEARCH = 'RECEIVE_SEARCH';
 
-export const receiveSearch = results => ({
+export const receiveSearch = data => ({
     type: RECEIVE_SEARCH,
-    results
+    data
 });
 
 export const searchBasic = query => dispatch => (

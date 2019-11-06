@@ -1,4 +1,5 @@
 import React from 'react';
+import PanelContainer from '../tracks/panel_container'
 
 class SearchResults extends React.Component {
     constructor(props) {
@@ -15,9 +16,22 @@ class SearchResults extends React.Component {
     render() {
         return (
             <div>
-                <h1>Search Results here</h1>
+                <h1>Results for '{this.props.match.params.query}'</h1>
                 <ul>
-
+                    {this.props.results.users.map(user => {
+                        return (
+                            <li>
+                                {user.username}
+                            </li>
+                        )
+                    })}
+                    {this.props.results.tracks.map(track => {
+                        return (
+                            <li>
+                                <PanelContainer track={track}/>
+                            </li>
+                        )
+                    })}
                 </ul>
             </div>
         )
