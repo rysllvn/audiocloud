@@ -11,9 +11,9 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_USER:
       return Object.assign({}, state, { [action.user.id]: action.user });
     case RECEIVE_TRACKS: 
-      return Object.assign(newState, action.data.users)
+      return Object.assign(newState, action.data.users);
     case RECEIVE_TRACK:
-      return Object.assign(newState, action.data.users)
+      return Object.assign(newState, action.data.users);
     default:
       return state;
   }

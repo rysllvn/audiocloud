@@ -43,11 +43,11 @@ class Main extends React.Component {
                     <Route exact path="/explore" component={ExploreContainer} />
                     <ProtectedRoute exact path="/upload" component={UploadContainer} />
                     <AuthRoute exact path="/login" component={RedirectLoginContainer} />
-                    <Route exact path="/users/ohno" component={UserNotFound} />
+                    {/* <Route exact path="/users/ohno" component={UserNotFound} /> */}
                     <Route path ="/tracks/:trackId" component={TrackShowContainer} />
                     <Route path ="/users/:userId" component={ProfileContainer} />
                     <Route path ="/about" component={About}/>
-                    <Route path ="/search" component={SearchResultsContainer} />
+                    <Route path ="/search/:query" component={SearchResultsContainer} />
                     <Route component={NoMatch} />
                 </Switch>
             </div>

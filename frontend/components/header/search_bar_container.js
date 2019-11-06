@@ -12,4 +12,4 @@ const mdp = dispatch => ({
     search: query => dispatch(searchBasic(query))
 });
 
-export default connect(msp, mdp)(SearchBar);
+export default withRouter(connect(msp, mdp)(SearchBar));
