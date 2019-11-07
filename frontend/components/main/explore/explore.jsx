@@ -19,19 +19,19 @@ class Explore extends React.Component {
             <div className="main-body">
                 <div className="main-section">
                     <h2>Newest songs</h2>
-                    <p>The latest hits, occasionaly updated maybe</p>
+                    <p>The latest hits, constantly updated</p>
                     {tracks.length && <TrackTileIndex tracks={newSongs} />}
                 </div>
 
                 <div className="main-section">
                     <h2>Audiocloud charts</h2>
-                    <p>Top hits from the week or just the first songs that popped out of the db</p>
+                    <p>Top hits from the week</p>
                     {tracks.length && <TrackTileIndex tracks={otherSongs} />}
                 </div>
 
                 <div className="main-section">
-                    <h2>More Songs</h2>
-                    <p>Songs about songs</p>
+                    <h2>Discover new music</h2>
+                    <p>Check out these great songs we think you'll love</p>
                     {tracks.length && <TrackTileIndex tracks={otherOtherSongs} />}
                 </div>
             </div>

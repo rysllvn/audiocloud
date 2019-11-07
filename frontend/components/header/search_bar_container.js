@@ -5,7 +5,7 @@ import { searchBasic } from '../../actions/search_actions';
 import SearchBar from './search_bar';
 
 const msp = (state, ownProps) => ({
-
+    type: ownProps.type,
 });
 
 const mdp = dispatch => ({
