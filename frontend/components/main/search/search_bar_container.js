@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import { searchBasic } from '../../actions/search_actions';
+import { searchBasic } from '../../../actions/search_actions';
 import SearchBar from './search_bar';
 
 const msp = (state, ownProps) => ({
-    type: ownProps.type,
+    container: ownProps.container,
 });
 
 const mdp = dispatch => ({

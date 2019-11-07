@@ -1,10 +1,9 @@
 import React from 'react';
 import LoginFormContainer from '../session/signin_form_container';
 import SignupFormContainer from '../session/create_account_form_container';
-import { Link } from 'react-router-dom';
 import TrackTileIndex from '../main/tracks/track_tile_index';
-import { receiveCurrentUser } from '../../actions/session_actions';
-import { timingSafeEqual } from 'crypto';
+import SearchBarContainer from '../main/search/search_bar_container';
+
 
 const filled = <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48"><circle cx="12" cy="12" r="12"/></svg>;
 
@@ -137,6 +136,7 @@ class Splash2 extends React.Component {
                     <h3 className="splash-welcome">Audiocloud, a Soundcloud clone</h3>
                 </div>
                 <div className="main">
+                    <SearchBarContainer container="splash" />
                     <div className="splash-index">
                         <h2 className="splash-text">Hear what's trending for free in the Audiocloud community</h2>
                         <TrackTileIndex tracks={newSongs}/>

@@ -1,6 +1,43 @@
-.search {
+.search-header {
     width: 100%;
     margin-right: 10px;
+    .search-preview-list {
+        position: absolute;
+        top: 46px;
+        background-color: #333;
+        width: auto;
+        .search-term-item {
+            background-color: #333;
+            padding: 10px;
+            font-size: 14px;
+            color: #ccc;
+            cursor: pointer;
+        }
+
+        .search-preview-item {
+            background-color: #111;
+            padding: 10px;
+            font-size: 14px;
+            color: #ccc;
+            cursor: pointer;
+        }
+        .search-preview-item:hover {
+            background-color: #333;
+        }
+        .search-preview-empty {
+            background-color: #111;
+            padding: 10px;
+            font-size: 14px;
+            color: #ccc;
+        }
+    }
+}
+
+.search-splash {
+    position: relative;
+    width: 100%;
+    margin-right: 10px;
+    z-index: 40;
     .search-preview-list {
         position: absolute;
         top: 46px;
