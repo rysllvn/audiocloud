@@ -20,16 +20,14 @@ class SearchResults extends React.Component {
                 <ul>
                     {this.props.results.users.map(user => {
                         return (
-                            <li>
+                            <li key={`u${user.id}`}>
                                 {user.username}
                             </li>
                         )
                     })}
                     {this.props.results.tracks.map(track => {
-                        return (
-                            <li>
-                                <PanelContainer track={track}/>
-                            </li>
+                        return (                            
+                                <PanelContainer key={track.id} track={track}/>                           
                         )
                     })}
                 </ul>
