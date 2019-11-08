@@ -92,3 +92,31 @@
     }
 }
 
+.profile-banner {
+    display: flex;
+    margin: 20px;
+    box-shadow: 0 2px 12px -5px rgba(0, 0, 0, 0.1);
+}
+
+.user-panel-link {
+    font-size: 30px;
+}
+
+.mini-user-container {
+    display: flex;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+    margin-right: 100px;
+}
+
+.mini-pic {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}

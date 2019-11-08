@@ -19,7 +19,7 @@ const LoggedInRight = ({history, logout, currentUser}) => (
         >Upload</NavLink>
         <Link
             to={`/users/${currentUser.id}`}
-            className="nav-upload"
+            className="nav-username"
         ><div>{currentUser.username}</div></Link>
         <AlertsDropdown />
         <MessagesDropdown />
