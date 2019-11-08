@@ -124,10 +124,6 @@ class SessionForm extends React.Component {
             className="button-switch-form"
             onClick={() => this.setModalStatus(this.otherForm)}
           >{this.otherFormNice}</button> 
-          <p className="disclaimer">
-            Hope you enjoy the project! You can find more projects I have done here 
-            <Link className="link-privacy" to="/otherprojects">Projects and information.</Link>
-          </p>
         </div>
       </div>
     );

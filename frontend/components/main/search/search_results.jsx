@@ -16,7 +16,7 @@ class SearchResults extends React.Component {
     render() {
         return (
             <div>
-                <h1>Results for '{this.props.match.params.query}'</h1>
+                <h2>Results for '{this.props.match.params.query}'</h2>
                 <ul>
                     {this.props.results.users.map(user => {
                         return (

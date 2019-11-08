@@ -41,3 +41,17 @@
 .upload-pic-button {
     height: 30px;
 }
+
+.profile-pic-form {
+    display: flex;
+    flex-direction: column;
+    .picture-update {
+        margin: 5px;
+        color: white;
+        background-color: #4285f4;
+        text-align: center;
+    }
+    .picture-update:hover {
+        cursor: pointer;
+    }
+}

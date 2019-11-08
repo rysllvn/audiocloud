@@ -77,6 +77,7 @@ class Upload extends React.Component {
                                 display: block;
                                 margin: 0 auto;
                                 border-color: orange;
+                                margin-top: 100px;
                             `;
             return (
                 
@@ -84,7 +85,7 @@ class Upload extends React.Component {
                 <ClipLoader 
                     css={override}
                     sizeUnit={"px"}
-                    size={150}
+                    size={300}
                     color={'#123abc'}
                     loading={this.state.uploading}
                 />

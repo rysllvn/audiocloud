@@ -49,9 +49,10 @@ class ProfilePicForm extends React.Component {
                     <h4>{this.state.status}</h4>
                     <h4>{this.state.errors}</h4>
                     <form
+                        className="profile-pic-form"
                         onSubmit={this.handleSubmit}
                     >
-                        <label htmlFor="image-input">Upload
+                        <label className="picture-update" htmlFor="image-input">Upload
                             <input
                                 id="image-input"
                                 type="file"

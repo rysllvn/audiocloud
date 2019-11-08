@@ -1,6 +1,17 @@
 .search-header {
     width: 100%;
     margin-right: 10px;
+    .search-input {
+        height: 28px;
+        width: 100%;
+        display: block;
+        font-size: 14px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .search-input:focus {
+        background: #fff;
+    }
     .search-preview-list {
         position: absolute;
         top: 46px;
@@ -35,9 +46,20 @@
 
 .search-splash {
     position: relative;
-    width: 100%;
-    margin-right: 10px;
+    width: 600px;
+    margin: 0 auto;
     z-index: 40;
+
+    .search-input {
+        height: 46px;
+        width: 100%;
+        display: block;
+        font-size: 18px;
+        margin: 0 auto;
+        background: #f2f2f2;
+        padding-left: 17px;
+    }
+
     .search-preview-list {
         position: absolute;
         top: 46px;
@@ -70,11 +92,3 @@
     }
 }
 
-.search-input {
-    height: 28px;
-    width: 100%;
-    display: block;
-    font-size: 14px;
-    margin-left: 10px;
-    margin-right: 10px;
-}

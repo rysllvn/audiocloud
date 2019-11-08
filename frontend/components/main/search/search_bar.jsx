@@ -61,7 +61,7 @@ class SearchBar extends React.Component {
                         onChange={this.handleInput}
                         className="search-input"
                         type="search"
-                        placeholder="Search"
+                        placeholder="Search for artists and tracks"
                         value={this.state.searchTerm}
                     />
                 </form>
