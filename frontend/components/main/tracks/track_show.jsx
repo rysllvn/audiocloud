@@ -40,8 +40,11 @@ class TrackShow extends React.Component {
 
     deleteTrack(e) {
         e.preventDefault();
-        this.props.deleteTrack(this.props.match.params.trackId);
-        this.props.history.push({pathname: `/users/${this.props.currentUserId}`});
+        const result = confirm('This will delete the track (cannot be undone)');
+        if (result)  {
+            this.props.deleteTrack(this.props.match.params.trackId);
+            this.props.history.push({pathname: `/users/${this.props.currentUserId}`});
+        }        
     }
 
     handleComment(e) {
@@ -74,8 +77,8 @@ class TrackShow extends React.Component {
         return (
             <div>
                 <h1>{this.props.track.title}</h1>
+                {this.props.currentUserId === this.props.track.user_id && <button className="track-delete" onClick={this.deleteTrack}>Delete Track</button>}
                 <PanelContainer track={this.props.track} />
-                {this.props.currentUserId === this.props.track.user_id && <button onClick={this.deleteTrack}>Delete Track</button>}
                 <div className="comment-box">
                     <form
                         onSubmit={this.handleComment}
