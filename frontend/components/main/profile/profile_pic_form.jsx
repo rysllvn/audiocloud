@@ -6,7 +6,7 @@ class ProfilePicForm extends React.Component {
         this.state = {
             photoFile: null,
             errors: null,
-            status: 'Upload a photo here',
+            status: 'Upload a profile pic',
             uploading: false,
         };
         this.handlePhoto = this.handlePhoto.bind(this);
@@ -52,14 +52,14 @@ class ProfilePicForm extends React.Component {
                         className="profile-pic-form"
                         onSubmit={this.handleSubmit}
                     >
-                        <label className="picture-update" htmlFor="image-input">Upload
+                        <label className="picture-update" htmlFor="image-input">Choose File
                             <input
                                 id="image-input"
                                 type="file"
                                 onChange={this.handlePhoto}
                             />
                         </label>
-                        <input type="submit" />
+                        <input type="submit" value="Upload"/>
                     </form>        
                 </div>
             )

@@ -29,7 +29,7 @@ class SearchBar extends React.Component {
     handleInput(e) {
         e.preventDefault();
         this.setState({searchTerm: e.target.value}, () => {
-            if(this.state.searchTerm.length > 1) {
+            if(this.state.searchTerm.length > 0) {
                 $.ajax({
                     method: 'GET',
                     url: '/api/searches',

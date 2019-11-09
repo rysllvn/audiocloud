@@ -44,7 +44,7 @@ class TrackShow extends React.Component {
         if (result)  {
             this.props.deleteTrack(this.props.match.params.trackId);
             this.props.history.push({pathname: `/users/${this.props.currentUserId}`});
-        }        
+        }
     }
 
     handleComment(e) {

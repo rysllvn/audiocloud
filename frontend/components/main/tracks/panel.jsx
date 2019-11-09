@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ToggleButtonContainer from '../../playcontrols/toggle_button_container';
+import WaveSeek from './waveform';
 
 class Panel extends React.Component {
     constructor(props) {
@@ -21,6 +22,7 @@ class Panel extends React.Component {
                 <div className="track-panel-title">
                     <Link className="title-user" to={`/users/${this.props.user.id}`}>{this.props.user.username}</Link>
                     <Link className="title-user" to={`/tracks/${this.props.track.id}`}>{this.props.track.title}</Link>
+                    <WaveSeek audioUrl={this.props.track.audioUrl} />
                 </div>
             </li>
         )
