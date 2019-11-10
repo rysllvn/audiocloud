@@ -15,6 +15,7 @@
 }
 
 .play-controls-inner {
+    overflow: visible;
     display: flex;
     justify-content: space-between;
     width: 1240px;
@@ -48,9 +49,14 @@
     margin: 12px;
 }
 
-
+.bar-progress:hover {
+    .bar-progress-knob {
+        display: block;
+    }
+}
 
 .bar-progress-knob {
+    display: none;
     top: 12px;
     position: absolute;
     border: 1px solid #f50;
@@ -133,3 +139,49 @@
 .play-controls-artist:hover {
     color: #333;
 }
+
+.volume-box {
+    overflow: visible;
+    position: relative;
+    // border: 1px solid black;
+    z-index: 9999;
+}
+
+.volume-bar-wrapper {
+    height: 118px;
+    border-color: #ccc;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    position: absolute;
+    left: -5px;
+    bottom: 40px;
+    width: 30px;
+    height: 60px;
+    transition: height .1s;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    background-color: #f2f2f2;
+    border: 1px solid black;
+    outline: 0;
+    cursor: pointer;
+}
+
+.volume-bar-wrapper:after {
+    bottom: -8px;
+    left: 9px;
+    z-index: 1;
+    border-color: transparent transparent #f2f2f2 #f2f2f2;
+    border-style: solid;
+    border-width: 4px;
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    box-sizing: border-box;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    pointer-events: none;
+    
+}
+

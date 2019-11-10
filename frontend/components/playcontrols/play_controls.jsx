@@ -2,6 +2,7 @@ import React from 'react';
 import ToggleMainContainer from './control_buttons_container';
 import PlayControlsTitle from './play_controls_title';
 import ProgressBar from './progress_bar';
+import Volume from './volume';
 
 class PlayControls extends React.Component {
     constructor(props) {
@@ -44,6 +45,7 @@ class PlayControls extends React.Component {
         const controls = <div className="play-controls-inner">                            
                             <ToggleMainContainer />
                             <ProgressBar curTime={this.state.currentTime} max={this.state.max} />
+                            {/* <Volume /> */}
                             <PlayControlsTitle artist={artist} track={track}/>
                         </div>
 
