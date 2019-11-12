@@ -15,15 +15,23 @@ class Panel extends React.Component {
         } else {
             image = <img className="panel-image" src={window.defaultTrackImage}/>;
         }
+        
+        const trackPlaying = this.props.currentTrack === this.props.track.id;
+        
         return (
             <li className="track-panel">
                 <div>{image}</div>
-                <ToggleButtonContainer trackId={this.props.track.id} type="panel-toggle"/>
                 <div className="track-panel-title">
-                    <Link className="title-user" to={`/users/${this.props.user.id}`}>{this.props.user.username}</Link>
-                    <Link className="title-user" to={`/tracks/${this.props.track.id}`}>{this.props.track.title}</Link>
-                    {/* <WaveSeek audioUrl={this.props.track.audioUrl} /> */}
+                    <div className="panel-toggle-container">
+                        <ToggleButtonContainer trackId={this.props.track.id} type="panel-toggle"/>
+                    </div>
+                    <div>
+                        <Link className="title-user" to={`/users/${this.props.user.id}`}>{this.props.user.username}</Link>
+                        <br/>
+                        <Link className="title-user" to={`/tracks/${this.props.track.id}`}>{this.props.track.title}</Link>
+                    </div>                    
                 </div>
+                <WaveSeek trackPlaying={trackPlaying} audioUrl={this.props.track.audioUrl} />
             </li>
         )
     }

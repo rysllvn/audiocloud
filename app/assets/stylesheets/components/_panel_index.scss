@@ -9,17 +9,22 @@
     margin-bottom: 45px;
     border: 1px solid #f2f2f2;
     box-shadow: 0 2px 12px -5px rgba(0, 0, 0, 0.1);
+    align-items: center;
 }
 
 .track-panel-title {
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
+    align-items: center;
+    height: 100%;
+    margin-left: 10px;
+    width: 180px;
 }
 
 .panel-toggle {
     position: relative;
-    top: 60px;
-    left: 60px;
+    // top: 60px;
+    // left: 60px;
     height: 50px;
     width: 50px;
     border-radius: 50%;
@@ -31,8 +36,8 @@
 
 .panel-toggle-show {
     position: relative;
-    top: 60px;
-    left: 60px;
+    // top: 60px;
+    // left: 60px;
     height: 50px;
     width: 50px;
     border-radius: 50%;
@@ -45,4 +50,8 @@
 .panel-image {
     height: 170px;
     width: 170px;
+}
+
+.panel-toggle-container {
+    margin-right: 10px;
 }

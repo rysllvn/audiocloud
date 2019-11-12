@@ -51,7 +51,7 @@ class PlayControls extends React.Component {
 
         return (
             <section className="play-controls">
-                <audio id="audio" src={src}/>
+                <audio id="audio" src={src} />
                 {src && controls}
             </section>
         )

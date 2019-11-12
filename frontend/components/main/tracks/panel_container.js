@@ -3,7 +3,8 @@ import Panel from './panel';
 import {setCurrentTrack} from '../../../actions/ui_actions';
 
 const msp = (state, ownProps) => ({
-    user: state.entities.users[ownProps.track.user_id]
+    user: state.entities.users[ownProps.track.user_id],
+    currentTrack: state.ui.currentTrack
 });
 
 const mdp = dispatch => ({
