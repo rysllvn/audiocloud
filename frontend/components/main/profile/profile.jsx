@@ -35,10 +35,10 @@ class Profile extends React.Component {
                             />
                          </div>;
         }
-        const uploadProfilePic = <button className="upload-pic-button">Upload</button>;
+        
         if (!this.props.user) return null;
         return (
-            <div className="profile-content">
+            <div>
                 <div className="profile-header">
                     {profilePic}
                     <h1 className="profile-name">{this.props.user.username}</h1>

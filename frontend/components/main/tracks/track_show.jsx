@@ -7,12 +7,13 @@ class TrackShow extends React.Component {
         super(props);
         this.state = {
             body: '',
-        }
+        };
         this.updateBody = this.updateBody.bind(this);
         this.handleComment = this.handleComment.bind(this);
         this.deleteComment = this.deleteComment.bind(this);
         this.deleteTrack = this.deleteTrack.bind(this);
     }
+    
     componentDidMount() {
         this.props.getTrack(this.props.match.params.trackId)
             .fail(() => {

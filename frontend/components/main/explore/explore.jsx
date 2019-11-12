@@ -16,8 +16,8 @@ class Explore extends React.Component {
 
     render() {
         let tracks = Object.values(this.props.tracks);
-        let newSongs = tracks.slice(0,5);
-        let otherSongs = tracks.slice(5,10);
+        let newSongs = tracks.slice(5,10);
+        let otherSongs = tracks.slice(0,5);
         let otherOtherSongs = tracks.slice(10,15);
 
         if (this.state.loading) {
