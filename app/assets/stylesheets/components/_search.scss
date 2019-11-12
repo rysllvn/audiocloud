@@ -101,6 +101,10 @@
 .user-panel-link {
     font-size: 30px;
 }
+.user-panel-link:hover {
+    color: grey;
+}
+
 
 .mini-user-container {
     display: flex;
