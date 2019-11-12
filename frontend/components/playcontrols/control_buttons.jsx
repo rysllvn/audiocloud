@@ -45,13 +45,6 @@ class ControlButtons extends React.Component {
                 <div
                     className="control-buttons"
                 >
-                    {/* <i 
-                        class="fas fa-play-circle"
-                        onClick={this.handleClick}
-                        style={{
-                            cursor: 'pointer'
-                        }}
-                    /> */}
                     <svg 
                         onClick={this.handleClick}
                         xmlns="http://www.w3.org/2000/svg"

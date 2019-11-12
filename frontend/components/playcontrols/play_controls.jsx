@@ -45,7 +45,7 @@ class PlayControls extends React.Component {
         const controls = <div className="play-controls-inner">                            
                             <ToggleMainContainer />
                             <ProgressBar curTime={this.state.currentTime} max={this.state.max} />
-                            {/* <Volume /> */}
+                            <Volume />
                             <PlayControlsTitle artist={artist} track={track}/>
                         </div>
 
