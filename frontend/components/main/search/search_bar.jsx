@@ -46,7 +46,6 @@ class SearchBar extends React.Component {
                 this.setState({results: {}});
             }
         })
-        console.log(this.state.results)
     }
 
     handleSubmit(e) {
