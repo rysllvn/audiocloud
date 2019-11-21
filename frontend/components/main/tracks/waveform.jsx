@@ -5,6 +5,7 @@ class WaveSeek extends React.Component {
         super(props);
         this.wavesurfer = null;
         this.audio = document.getElementById('audio');
+        this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount() {
@@ -23,6 +24,10 @@ class WaveSeek extends React.Component {
         });
     }
 
+    handleClick(e) {
+
+    }
+
     componentWillUnmount() {
         this.audio.removeEventListener('timeupdate', () => {
             if (this.props.trackPlaying) {
@@ -33,7 +38,8 @@ class WaveSeek extends React.Component {
 
     render() {
         return (
-            <div id="waveform">
+            <div id="waveform"
+                onClick={this.handleClick}>
             </div>
         )
     }
