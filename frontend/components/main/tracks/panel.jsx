@@ -31,7 +31,7 @@ class Panel extends React.Component {
                         <Link className="title-user" to={`/tracks/${this.props.track.id}`}>{this.props.track.title}</Link>
                     </div>                    
                 </div>
-                <WaveSeek trackPlaying={trackPlaying} audioUrl={this.props.track.audioUrl} />
+                {this.props.track.audioUrl && <WaveSeek trackPlaying={trackPlaying} audioUrl={this.props.track.audioUrl} />}
             </li>
         )
     }
