@@ -61,10 +61,8 @@ class ToggleButton extends React.Component {
     }
 }
 ```
-## Status
-Project is: _in progress_ 
 
-## Inpsiration
+## Inspiration
 Soundcloud
 
 ## Contact
