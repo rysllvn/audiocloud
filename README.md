@@ -1,5 +1,5 @@
 # Audiocloud
-> Clone of Audiocloud to sharpen React, Redux, and Rails skills. [Live!](https://ryan-audiocloud.herokuapp.com/#/)
+> Clone of Audiocloud to sharpen React, Redux, and Rails skills.
 
 ## Table of contents
 * [General info](#general-info)
